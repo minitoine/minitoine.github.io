@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
 body {
   text-align: justify;
   text-justify: inter-word;
 }
+
 
 .button {
   background-color: #4CAF50; /* Green */
@@ -96,8 +98,8 @@ function DisplayFormPage() {
   html += "<form id=\"myForm\" class=form>";
   html += "<label for=\"pid\">Participant id</label>"
   html += "<input type=\"number\" name=\"pid\"><br>";
-  html += "</form>";
   html += "<input type=button onclick=\"StartXP()\" value =\"Start XP\">";
+  html += "</form>";
   document.getElementsByTagName("body")[0].innerHTML = html;
 }
 
