@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+body {
+ text-align: justify;
+  text-justify: inter-word;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px 32px;
+  text-align: center;
+  text-decoration: none;
+  /*display: inline-block;*/
+  font-size: 25px;
+}
+
+.instruction {
+  background-color: #b6b8bf; /* Green */
+  border: none;
+  color: black;
+  padding: 60px 32px;
+  text-align: center;
+  text-decoration: none;
+  /*display: inline-block;*/
+  font-size: 40px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+</style>
+<body onload="OnLoad()">
+
+</body>
+
+<script>
+
+
+
+var tasks = ["read", "search", "navigation"];
+var lengths = [10]//, 20, 30];
+
+
+var xp_design = ["task", "length"];
+var xp_factors = [tasks, lengths];
+var current_xp_state = [0, 0];
+var participant_id = -1; 
+var trial_number = 0;
+var current_task;
+var current_length;
+
+
+PrepareTrial();
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+function getUrlParameter(url, parameter, default_value) {
+    parameter = parameter.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?|&]' + parameter.toLowerCase() + '=([^&#]*)');
+    var results = regex.exec('?' + url.toLowerCase().split('?')[1]);
+    return results === null ? default_value : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
+function setUrlParameter(url, key, value) {
+    var key = encodeURIComponent(key),
+        value = encodeURIComponent(value);
+
+    var baseUrl = url.split('?')[0],
+        newParam = key + '=' + value,
+        params = '?' + newParam;
+
+    if (url.split('?')[1] === undefined){ // if there are no query strings, make urlQueryString empty
+        urlQueryString = '';
+    } else {
+        urlQueryString = '?' + url.split('?')[1];
+    }
+
+    // If the "search" string exists, then build params from it
+    if (urlQueryString) {
+        var updateRegex = new RegExp('([\?&])' + key + '[^&]*');
+        var removeRegex = new RegExp('([\?&])' + key + '=[^&;]+[&;]?');
+
+        if (value === undefined || value === null || value === '') { // Remove param if value is empty
+            params = urlQueryString.replace(removeRegex, "$1");
+            params = params.replace(/[&;]$/, "");
+            
+        } else if (urlQueryString.match(updateRegex) !== null) { // If param exists already, update it
+            params = urlQueryString.replace(updateRegex, "$1" + newParam);
+            
+        } else if (urlQueryString == '') { // If there are no query strings
+            params = '?' + newParam;
+        } else { // Otherwise, add it to end of query string
+            params = urlQueryString + '&' + newParam;
+        }
+    }
+
+    // no parameter was set so we don't need the question mark
+    params = params === '?' ? '' : params;
+
+    return baseUrl + params;
+}
+
+function DisplayXPForm() {
+  var html = "";
+  html += "<p id=content>";
+  html += "<form id=\"myForm\" action=\"javascript:StartXP()\">";
+  html += "Participant id: <input type=\"number\" name=\"participant_id\"><br>";
+  html += "</form>";
+  html += "<button onclick=\"StartXP()\">Start XP</button>";
+  html += "</p>";
+  document.getElementsByTagName("body")[0].innerHTML = html;
+}
+
+function OnLoad() {
+  var xp_status = getUrlParameter(window.location.href,"XP","Error");
+  if (xp_status == "Start") {
+    DisplayFormPage();
+  }
+  else if (xp_status == "Running") {
+    DisplayTrialPage();
+  }
+  else if (xp_status == "Finished") {
+    DisplayEndPage();
+  }
+}
+
+function StartXP() {
+  var form = document.getElementById("myForm");
+  if (form.elements.participant_id.value.length == 0) {
+    alert("Please give a participant id");
+    return;
+  }
+  participant_id = form.elements.participant_id.value;
+  console.log("Participant id:"+participant_id);
+
+  window.location.href = setUrlParameter(window.location.href, 'XP', 'True'); 
+}
+
+function UpdateXPFactors() {
+  var i;
+  for (i = 0; i < xp_design.length; i++) { 
+    if (xp_design[i] == "task")
+      current_task = tasks[current_xp_state[i]];
+    else if (xp_design[i] == "length")
+      current_length = lengths[current_xp_state[i]];
+  }
+}
+
+function NextTrialFactors() {
+  var i;
+  for (i = xp_factors.length-1; i >= 0; i--) { 
+    if (current_xp_state[i]+1 == xp_factors[i].length) {
+      if (i==0) {
+        return true; // XP is finished
+      }
+      current_xp_state[i] = 0;
+    }
+    else {
+      current_xp_state[i] += 1;
+      return false;
+    }
+  }
+  alert("ERROR XP DESIGN");
+  return true;
+}
+
+function Button(func) {
+  return "<div class=button onclick=\""+func+"\">Click me!</div>"; 
+}
+
+
+function PrepareTrial() {
+  trial_number += 1;
+
+  UpdateXPFactors();
+
+  console.log("Trial:"+trial_number+" Task:"+current_task+" Length:"+current_length);
+
+  if (current_task == "search")
+    DisplaySearchTask(current_length);
+  else if (current_task == "navigation")
+    DisplayNavigationTask(current_length);
+  else if (current_task == "read")
+    DisplayReadTask(current_length);
+}
+
+function DisplayReadTask(length) {
+  var html = instructions("↓↓ Click on all buttons ↓↓");
+  var l;
+
+  for (l = 0; l < length; l++) {
+    html += content_section();
+    if (l<length-1)
+      html += Button("OnTempButtonClicked(this)");
+  }
+
+  html += Button("OnTrialEnd()");
+
+  document.getElementsByTagName("body")[0].innerHTML = html;
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+function OnTempButtonClicked(button_id) {
+  // console.log(button_id.attributes);
+  button_id.setAttribute("style", "background-color: #4295f5;");
+}
+
+
+function DisplayNavigationTask(length) {
+  var html = instructions("↓↓ Scroll at the bottom as fast as you can↓↓");
+  var d;
+
+  for (l = 0; l < length; l++) {
+    html += content_section();
+  }
+  html += Button("OnTrialEnd()");
+
+  document.getElementsByTagName("body")[0].innerHTML = html;
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+function DisplaySearchTask(length) {
+  var html = instructions("↓↓ Find and click on the button ↓↓");
+  var d;
+
+  for (l = 0; l < length/2; l++) {
+    html += content_section();
+  }
+  html += Button("OnTrialEnd()"); // Target at the middle
+  for (l = 0; l < length/2; l++) {
+    html += content_section();
+  }
+
+  document.getElementsByTagName("body")[0].innerHTML = html;
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+function OnTrialEnd() {
+
+  var xp_finished = NextTrialFactors();
+
+  if (xp_finished){
+    end_screen();
+  }
+  else {
+    PrepareTrial();
+  }
+}
+
+function content_section() {
+  return lorem() + google_logo() + lorem();
+}
+
+function lorem() {
+  return "<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>";
+}
+
+function end_screen() {
+  var html = instructions("Experiment is finished. Thanks you for your participation. =)");
+  document.getElementsByTagName("body")[0].innerHTML = html;
+}
+
+function google_logo() {
+  return "<p><img src=gowat.png></p>";
+}
+
+
+function instructions(text) {
+  return "<div class=instruction>"+text+"</div>"
+}
+
+</script>
+</html>
+
