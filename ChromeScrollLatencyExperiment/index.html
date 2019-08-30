@@ -79,14 +79,21 @@ div {
 <script>
 
 
+var latin_square_3 = [
+[0, 1, 2],
+[0, 2, 1],
+[1, 0, 2], 
+[1, 2, 0], 
+[2, 0, 1],
+[2, 1, 0],
+];
 
 
+var xp_tasks = ["read", "search", "navigation"];
+var xp_lengths = [10, 20, 30];
 
-var tasks = ["read", "search", "navigation"];
-var lengths = [10, 20, 30];
-
-var xp_design = ["task", "length"];
-var xp_factors = [tasks, lengths];
+var xp_design = ["tasks", "lengths"];
+var xp_factors = [];
 var xp_state = [0, -1];
 var xp_status;
 var participant_id = -1; 
@@ -95,10 +102,10 @@ var current_length;
 
 function DisplayFormPage() {
   var html = "";
-  html += "<form id=\"myForm\" class=form action=\"javascript:StartXP()\">";
+  html += "<form id=\"myForm\" class=form action=\"javascript:ShowProtocol()\">";
   html += "<label for=\"pid\">Participant id</label>"
   html += "<input type=\"number\" name=\"pid\"><br>";
-  html += "<input type=button onclick=\"StartXP()\" value =\"Start XP\">";
+  html += "<input type=button onclick=\"ShowProtocol()\" value =\"OK\">";
   html += "</form>";
   document.getElementsByTagName("body")[0].innerHTML = html;
 }
@@ -116,10 +123,8 @@ function OnLoad() {
   if (url.has('length'))
     current_length = parseInt(url.get("length"));
 
-
-  console.log("xp_state:",xp_state);
-
   if (xp_status == "started") {
+    BuildXfactors(); 
     DisplayTrialPage();
   }
   else if (xp_status == "finished") {
@@ -130,14 +135,42 @@ function OnLoad() {
   }
 }
 
-function StartXP() {
+function BuildXfactors() {
+  var latin_square_row = latin_square_3[participant_id %6];
+  var user_tasks = [];
+  var user_lengths = [];
+  console.log(latin_square_row);
+  for (var i in latin_square_row) {
+    user_tasks.push(xp_tasks[latin_square_row[i]]);
+    user_lengths.push(xp_lengths[latin_square_row[i]]);
+  }
+  xp_factors = [user_tasks, user_lengths];
+}
+
+function ShowProtocol() {
   var form = document.getElementById("myForm");
   if (form.elements.pid.value.length == 0) {
     alert("Please give a participant id");
     return;
   }
   participant_id = form.elements.pid.value;
+  BuildXfactors();
 
+  var html = "";
+  html += "<br>";
+  html += "<br>Participant id = " + participant_id;
+  html += "<br>XP design = " + xp_design;
+  for (var i=0; i < xp_design.length; i++) {
+    html += "<br>"+xp_design[i]+" = " + xp_factors[i];
+  }
+
+  html += "<br><br><br>";
+  html += Button("StartXP()","Start XP")
+ 
+  document.getElementsByTagName("body")[0].innerHTML += html;
+}
+
+function StartXP() {
   RequestNextTrial();
 }
 
@@ -150,10 +183,10 @@ function RequestNextTrial() {
   url.set('xp_state', xp_state);
   url.set('pid', participant_id);
 
-  var task_factor_idx = xp_design.indexOf('task');
+  var task_factor_idx = xp_design.indexOf('tasks');
   url.set('task', xp_factors[task_factor_idx][xp_state[task_factor_idx]])
 
-  var length_factor_idx = xp_design.indexOf('length');
+  var length_factor_idx = xp_design.indexOf('lengths');
   url.set('length', xp_factors[length_factor_idx][xp_state[length_factor_idx]])
 
   window.location.search = url.toString(); 
@@ -268,7 +301,7 @@ function lorem() {
 }
 
 function DisplayEndPage() {
-  var html = instructions("Experiment is finished. Thanks you for your participation. =)");
+  var html = instructions("Thank you for your participation. =)");
   html += Button("BackToForm()", "New XP");
   document.getElementsByTagName("body")[0].innerHTML = html;
 }
