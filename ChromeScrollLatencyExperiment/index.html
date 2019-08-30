@@ -95,7 +95,7 @@ var current_length;
 
 function DisplayFormPage() {
   var html = "";
-  html += "<form id=\"myForm\" class=form>";
+  html += "<form id=\"myForm\" class=form action=\"javascript:StartXP()\">";
   html += "<label for=\"pid\">Participant id</label>"
   html += "<input type=\"number\" name=\"pid\"><br>";
   html += "<input type=button onclick=\"StartXP()\" value =\"Start XP\">";
