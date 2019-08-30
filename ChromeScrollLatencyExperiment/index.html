@@ -3,7 +3,7 @@
 <style>
 
 body {
- text-align: justify;
+  text-align: justify;
   text-justify: inter-word;
 }
 
@@ -34,6 +34,41 @@ img {
   height: auto;
 }
 
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=button] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=button]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.form {
+  text-align: left;
+}
+
 </style>
 <body onload="OnLoad()">
 
@@ -58,12 +93,11 @@ var current_length;
 
 function DisplayFormPage() {
   var html = "";
-  html += "<p id=content>";
-  html += "<form id=\"myForm\" action=\"javascript:StartXP()\">";
-  html += "Participant id: <input type=\"number\" name=\"participant_id\"><br>";
+  html += "<form id=\"myForm\" class=form>";
+  html += "<label for=\"pid\">Participant id</label>"
+  html += "<input type=\"number\" name=\"pid\"><br>";
   html += "</form>";
-  html += "<button onclick=\"StartXP()\">Start XP</button>";
-  html += "</p>";
+  html += "<input type=button onclick=\"StartXP()\" value =\"Start XP\">";
   document.getElementsByTagName("body")[0].innerHTML = html;
 }
 
@@ -96,11 +130,11 @@ function OnLoad() {
 
 function StartXP() {
   var form = document.getElementById("myForm");
-  if (form.elements.participant_id.value.length == 0) {
+  if (form.elements.pid.value.length == 0) {
     alert("Please give a participant id");
     return;
   }
-  participant_id = form.elements.participant_id.value;
+  participant_id = form.elements.pid.value;
 
   RequestNextTrial();
 }
@@ -166,7 +200,7 @@ function DisplayTrialPage() {
 }
 
 function DisplayReadTask(length) {
-  var html = instructions("↓↓ Click on all buttons ↓↓");
+  var html = instructions("Click on all buttons<br>↓↓");
   var l;
 
   for (l = 0; l < length; l++) {
@@ -189,7 +223,7 @@ function OnTempButtonClicked(button_id) {
 
 
 function DisplayNavigationTask(length) {
-  var html = instructions("↓↓ Scroll at the bottom as fast as you can↓↓");
+  var html = instructions("Scroll at the bottom as fast as you can<br>↓↓");
   var d;
 
   for (l = 0; l < length; l++) {
@@ -203,7 +237,7 @@ function DisplayNavigationTask(length) {
 }
 
 function DisplaySearchTask(length) {
-  var html = instructions("↓↓ Find and click on the button ↓↓");
+  var html = instructions("Find and click on the button<br>↓↓");
   var d;
 
   for (l = 0; l < length/2; l++) {
