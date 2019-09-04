@@ -6,6 +6,7 @@ body {
   text-align: justify;
   text-justify: inter-word;
 }
+
 .button {
   background-color: #4CAF50; /* Green */
   border: none;
@@ -74,19 +75,23 @@ var latin_square_3 = [
 [2, 0, 1],
 [2, 1, 0],
 ];
-var xp_tasks = ["read", "search", "navigation"];
-var xp_lengths = [10, 20, 30];
-var device;
-var xp_design = ["tasks", "lengths"];
-var xp_factors = [];
-var xp_state = [0, -1];
-var xp_status;
-var participant_id = -1; 
+
+var xp_tasks = ["read"];//, "search", "navigation"];
 var current_task;
+var xp_lengths = [10, 20, 30];
 var current_length;
+var xp_directions = ["up","down"];
+var current_direction;
+var participant_id = -1; 
+var device;
+var xp_design = ["task", "direction", "length"];
+var xp_factors = [];
+var xp_state = [0, 0, -1];
+var xp_status;
+
 function DisplayFormPage() {
   var html = "";
-  html += "<form id=\"myForm\">";
+  html += "<form class=form id=\"myForm\">";
   html += "<label>Participant id</label>"
   html += "<input type=\"number\" name=\"pid\"><br>";
   html += "<label>Device</label>"
@@ -98,6 +103,7 @@ function DisplayFormPage() {
   html += "</form>";
   document.getElementsByTagName("body")[0].innerHTML = html;
 }
+
 function OnLoad() {
   var url = new URLSearchParams(window.location.search);
   if (url.has('xp_status'))
@@ -112,8 +118,11 @@ function OnLoad() {
     current_length = parseInt(url.get("length"));
   if (url.has('device'))
     device = url.get('device');
+  if (url.has('direction'))
+    current_direction = url.get('direction');
+
   if (xp_status == "started") {
-    BuildXfactors(); 
+    BuildXPfactors(); 
     DisplayTrialPage();
   }
   else if (xp_status == "finished") {
@@ -123,16 +132,20 @@ function OnLoad() {
     DisplayFormPage();
   }
 }
-function BuildXfactors() {
+function BuildXPfactors() {
   var latin_square_row = latin_square_3[participant_id %6];
   var user_tasks = [];
   var user_lengths = [];
-  console.log(latin_square_row);
   for (var i in latin_square_row) {
     user_tasks.push(xp_tasks[latin_square_row[i]]);
     user_lengths.push(xp_lengths[latin_square_row[i]]);
   }
-  xp_factors = [user_tasks, user_lengths];
+  var user_directions = xp_directions.slice();
+  if (Math.floor(participant_id/6)%2 == participant_id % 2) {
+    user_directions = user_directions.reverse();
+  }
+
+  xp_factors = [user_tasks, user_directions, user_lengths];
 }
 function ShowProtocol() {
   var form = document.getElementById("myForm");
@@ -142,7 +155,7 @@ function ShowProtocol() {
   }
   device = form.elements.device_list.value;
   participant_id = form.elements.pid.value;
-  BuildXfactors();
+  BuildXPfactors();
   var html = "";
   html += "<br>";
   html += "<br>participant id = " + participant_id;
@@ -167,21 +180,16 @@ function RequestNextTrial() {
   url.set('xp_state', xp_state);
   url.set('pid', participant_id);
   url.set('device', device);
-  var task_factor_idx = xp_design.indexOf('tasks');
-  url.set('task', xp_factors[task_factor_idx][xp_state[task_factor_idx]])
-  var length_factor_idx = xp_design.indexOf('lengths');
-  url.set('length', xp_factors[length_factor_idx][xp_state[length_factor_idx]])
+
+  for (var i = 0; i < xp_design.length; i++) {
+    url.set(xp_design[i], xp_factors[i][xp_state[i]])
+  }
+
   window.location.search = url.toString(); 
 }
 function BackToForm() {
   var url = new URLSearchParams(window.location.search);
-  if (url.has('xp_status')) url.delete('xp_status');
-  if (url.has('pid')) url.delete('pid'); 
-  if (url.has('xp_state')) url.delete('xp_state');
-  if (url.has('task')) url.delete("task");
-  if (url.has('length')) url.delete("length");
-  if (url.has('device')) url.delete("device");
-  window.location.search = url.toString(); 
+  window.location.search = url.toString().split('?')[0]; 
 }
 function NextTrialFactors() {
   var i;
@@ -205,53 +213,68 @@ function Button(func, text = "Click me!") {
 }
 function DisplayTrialPage() {
   if (current_task == "search")
-    DisplaySearchTask(current_length);
+    DisplaySearchTask();
   else if (current_task == "navigation")
-    DisplayNavigationTask(current_length);
+    DisplayNavigationTask();
   else if (current_task == "read")
-    DisplayReadTask(current_length);
+    DisplayReadTask();
 }
-function DisplayReadTask(length) {
-  var html = instructions("Click on all buttons<br>↓↓");
+function DisplayReadTask() {
+  var html = ""; 
   var l;
-  for (l = 0; l < length; l++) {
-    html += content_section();
-    if (l<length-1)
-      html += Button("OnTempButtonClicked(this)");
-  }
-  html += Button("OnTrialEnd()");
-  document.getElementsByTagName("body")[0].innerHTML = html;
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+  if (current_direction == "up") {
+    html += Button("OnTrialEnd()");
+    for (l = 0; l < current_length; l++) {
+        if (l>0)
+          html += Button("OnTempButtonClicked(this)");
+      html += content_section();
+    }
+    html += instructions("↑↑<br>Click on all buttons");
+    document.body.innerHTML = html;
+    console.log(document.body.scrollHeight);
+    window.scrollTo(0, document.body.scrollHeight); 
+    // document.body.scrollTop = document.body.scrollHeight;
 }
+  else if (current_direction == "down") {
+    html += instructions("Click on all buttons<br>↓↓");
+    for (l = 0; l < current_length; l++) {
+      html += content_section();
+      if (l<current_length-1)
+        html += Button("OnTempButtonClicked(this)");
+    }
+    html += Button("OnTrialEnd()");
+    document.body.innerHTML = html;
+    document.body.scrollTop = 0;
+  }
+}
+
 function OnTempButtonClicked(button_id) {
   // console.log(button_id.attributes);
   button_id.setAttribute("style", "background-color: #4295f5;");
 }
-function DisplayNavigationTask(length) {
+
+function DisplayNavigationTask() {
   var html = instructions("Scroll at the bottom as fast as you can<br>↓↓");
   var d;
-  for (l = 0; l < length; l++) {
+  for (l = 0; l < current_length; l++) {
     html += content_section();
   }
   html += Button("OnTrialEnd()");
   document.getElementsByTagName("body")[0].innerHTML = html;
   document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
 }
-function DisplaySearchTask(length) {
+function DisplaySearchTask() {
   var html = instructions("Find and click on the button<br>↓↓");
   var d;
-  for (l = 0; l < length/2; l++) {
+  for (l = 0; l < current_length/2; l++) {
     html += content_section();
   }
   html += Button("OnTrialEnd()"); // Target at the middle
-  for (l = 0; l < length/2; l++) {
+  for (l = 0; l < current_length/2; l++) {
     html += content_section();
   }
   document.getElementsByTagName("body")[0].innerHTML = html;
   document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
 }
 function OnTrialEnd() {
   RequestNextTrial();
@@ -260,7 +283,14 @@ function content_section() {
   return lorem() + image() + lorem();
 }
 function lorem() {
-  return "<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>";
+  return "<div>Lorem Ipsum is simply dummy text of the printing and typesetting \
+  industry. Lorem Ipsum has been the industry's standard dummy text ever since \
+  the 1500s, when an unknown printer took a galley of type and scrambled it to \
+  make a type specimen book. It has survived not only five centuries, but also \
+  the leap into electronic typesetting, remaining essentially unchanged. It was \
+  popularised in the 1960s with the release of Letraset sheets containing Lorem \
+  Ipsum passages, and more recently with desktop publishing software like Aldus \
+  PageMaker including versions of Lorem Ipsum.</div>";
 }
 function DisplayEndPage() {
   var html = instructions("Thank you for your participation. =)");
