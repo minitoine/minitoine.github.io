@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 <style>
 body {
   text-align: justify;
-  text-justify: inter-word;
 }
 
 .button {
@@ -14,22 +13,19 @@ body {
   padding: 20px 32px;
   text-align: center;
   text-decoration: none;
-  /*display: inline-block;*/
   font-size: 25px;
 }
 .instruction {
-  background-color: #b6b8bf; /* Green */
+  background-color: #b6b8bf; /* gray */
   border: none;
   color: black;
   padding: 60px 32px;
   text-align: center;
   text-decoration: none;
-  /*display: inline-block;*/
   font-size: 40px;
 }
 img {
   width: 100%;
-  height: auto;
 }
 input[type=number], select {
   width: 100%;
@@ -54,7 +50,7 @@ input[type=button]:hover {
   background-color: #45a049;
 }
 div {
-  border-radius: 5px;
+  border-radius: 7px;
   background-color: #f2f2f2;
   padding: 20px;
 }
@@ -78,7 +74,7 @@ var latin_square_3 = [
 
 var xp_tasks = ["read", "search", "navigation"];
 var current_task;
-var xp_lengths = [10, 10, 10];//, 20, 30];
+var xp_lengths = [10, 20, 30];
 var current_length;
 var xp_directions = ["up","down"];
 var current_direction;
@@ -223,6 +219,17 @@ function OnTempButtonClicked(button_id) {
   button_id.setAttribute("style", "background-color: #4295f5;");
 }
 
+function ScrollToBottom(i = 2) {
+    console.log(i);  
+    window.scrollBy(0, 99999);
+    if (i > 0 )
+      scrolldelay = setTimeout(function() { ScrollToBottom(i-1)},1);
+}
+
+function ScrollToTop() {
+    window.scrollTo(0, 0); 
+}
+
 function DisplayReadTask() {
   var html = ""; 
   var l;
@@ -235,7 +242,7 @@ function DisplayReadTask() {
     }
     html += instructions("↑↑<br>Click on all buttons");
     document.body.innerHTML = html;
-    window.scrollTo(0, 999999); 
+    ScrollToBottom(); 
   }
   else if (current_direction == "down") {
     html += instructions("Click on all buttons<br>↓↓");
@@ -246,7 +253,7 @@ function DisplayReadTask() {
     }
     html += Button("OnTrialEnd()");
     document.body.innerHTML = html;
-    window.scrollTo(0, 0); 
+    ScrollToTop();
   }
 }
 
@@ -260,7 +267,7 @@ function DisplayNavigationTask() {
     }
     html += instructions("↑↑<br>Scroll at the top as fast as you can");
     document.body.innerHTML = html;
-    window.scrollTo(0, 999999); 
+    ScrollToBottom(); 
   }
   else if (current_direction == "down") {
     html += instructions("Scroll at the bottom as fast as you can<br>↓↓");
@@ -269,7 +276,7 @@ function DisplayNavigationTask() {
     }
     html += Button("OnTrialEnd()");
     document.body.innerHTML = html;
-    window.scrollTo(0, 0); 
+    ScrollToTop();
   }
 }
 
@@ -286,7 +293,7 @@ function DisplaySearchTask() {
     }
     html += instructions("↑↑<br>Find and click on the button");
     document.body.innerHTML = html;
-    window.scrollTo(0, 999999); 
+    ScrollToBottom(); 
   }
   else if (current_direction == "down") {
     html += instructions("Find and click on the button<br>↓↓");
@@ -298,7 +305,7 @@ function DisplaySearchTask() {
       html += content_section();
     }
     document.body.innerHTML = html;
-    window.scrollTo(0, 0); 
+    ScrollToTop();
   }
 }
 function OnTrialEnd() {
