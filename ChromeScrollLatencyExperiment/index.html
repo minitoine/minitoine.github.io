@@ -76,9 +76,9 @@ var latin_square_3 = [
 [2, 1, 0],
 ];
 
-var xp_tasks = ["read"];//, "search", "navigation"];
+var xp_tasks = ["read", "search", "navigation"];
 var current_task;
-var xp_lengths = [10, 20, 30];
+var xp_lengths = [10, 10, 10];//, 20, 30];
 var current_length;
 var xp_directions = ["up","down"];
 var current_direction;
@@ -188,8 +188,7 @@ function RequestNextTrial() {
   window.location.search = url.toString(); 
 }
 function BackToForm() {
-  var url = new URLSearchParams(window.location.search);
-  window.location.search = url.toString().split('?')[0]; 
+  window.location.search = window.location.search.split('?')[0]; 
 }
 function NextTrialFactors() {
   var i;
@@ -219,6 +218,11 @@ function DisplayTrialPage() {
   else if (current_task == "read")
     DisplayReadTask();
 }
+
+function OnTempButtonClicked(button_id) {
+  button_id.setAttribute("style", "background-color: #4295f5;");
+}
+
 function DisplayReadTask() {
   var html = ""; 
   var l;
@@ -231,10 +235,8 @@ function DisplayReadTask() {
     }
     html += instructions("↑↑<br>Click on all buttons");
     document.body.innerHTML = html;
-    console.log(document.body.scrollHeight);
-    window.scrollTo(0, document.body.scrollHeight); 
-    // document.body.scrollTop = document.body.scrollHeight;
-}
+    window.scrollTo(0, 999999); 
+  }
   else if (current_direction == "down") {
     html += instructions("Click on all buttons<br>↓↓");
     for (l = 0; l < current_length; l++) {
@@ -244,37 +246,60 @@ function DisplayReadTask() {
     }
     html += Button("OnTrialEnd()");
     document.body.innerHTML = html;
-    document.body.scrollTop = 0;
+    window.scrollTo(0, 0); 
   }
-}
-
-function OnTempButtonClicked(button_id) {
-  // console.log(button_id.attributes);
-  button_id.setAttribute("style", "background-color: #4295f5;");
 }
 
 function DisplayNavigationTask() {
-  var html = instructions("Scroll at the bottom as fast as you can<br>↓↓");
-  var d;
-  for (l = 0; l < current_length; l++) {
-    html += content_section();
+  var html = "";
+  var l;
+  if (current_direction == "up") {
+    html += Button("OnTrialEnd()");
+    for (l = 0; l < current_length; l++) {
+      html += content_section();
+    }
+    html += instructions("↑↑<br>Scroll at the top as fast as you can");
+    document.body.innerHTML = html;
+    window.scrollTo(0, 999999); 
   }
-  html += Button("OnTrialEnd()");
-  document.getElementsByTagName("body")[0].innerHTML = html;
-  document.body.scrollTop = 0;
+  else if (current_direction == "down") {
+    html += instructions("Scroll at the bottom as fast as you can<br>↓↓");
+    for (l = 0; l < current_length; l++) {
+      html += content_section();
+    }
+    html += Button("OnTrialEnd()");
+    document.body.innerHTML = html;
+    window.scrollTo(0, 0); 
+  }
 }
+
 function DisplaySearchTask() {
-  var html = instructions("Find and click on the button<br>↓↓");
-  var d;
-  for (l = 0; l < current_length/2; l++) {
-    html += content_section();
+  var html = "";
+  var l;
+  if (current_direction == "up") {
+    for (l = 0; l < current_length/2; l++) {
+      html += content_section();
+    }
+    html += Button("OnTrialEnd()"); // Target at the middle
+    for (l = 0; l < current_length/2; l++) {
+      html += content_section();
+    }
+    html += instructions("↑↑<br>Find and click on the button");
+    document.body.innerHTML = html;
+    window.scrollTo(0, 999999); 
   }
-  html += Button("OnTrialEnd()"); // Target at the middle
-  for (l = 0; l < current_length/2; l++) {
-    html += content_section();
+  else if (current_direction == "down") {
+    html += instructions("Find and click on the button<br>↓↓");
+    for (l = 0; l < current_length/2; l++) {
+      html += content_section();
+    }
+    html += Button("OnTrialEnd()"); // Target at the middle
+    for (l = 0; l < current_length/2; l++) {
+      html += content_section();
+    }
+    document.body.innerHTML = html;
+    window.scrollTo(0, 0); 
   }
-  document.getElementsByTagName("body")[0].innerHTML = html;
-  document.body.scrollTop = 0;
 }
 function OnTrialEnd() {
   RequestNextTrial();
