@@ -1,0 +1,377 @@
+##################################### INFOS ####################################
+infos:
+    name: "Axel Antoine"
+    image: "me.jpg"
+    text: "I am a PhD student at the University of Lille, France, interested in 
+        Human Computer Interaction, currently doing my PhD with Géry Casiez and 
+        Sylvain Malacria in the Loki team at Inria Lille - Nord Europe in France 
+        until January 8th 2021. While I can adapt to many situations and technologies, 
+        I have mostly worked on force based techniques to control autoscroll on 
+        mobile devices and desktop computers, on latency compensation techniques 
+        on desktop computers using hardware improvements and on mobile devices 
+        through software solutions within Chromium and on 3D staging techniques 
+        to ease the production of vector-based illustrations."
+    links:
+        mail: "mailto:ax.antoine@gmail.com"
+        linkedin: "https://www.linkedin.com/in/axel-antoine-318b07105"
+        facebook: "https://www.facebook.com/Axel.Antoine"
+        resume: "./documents/AxelAntoine_resume.pdf"
+
+################################### PROJECTS ###################################
+projects:
+    name: "Projects"
+    subsections:
+        major_projects:
+            name: "Major Projects"
+            items:
+                -
+                    title: "Spatial Jitter compensation in Chromium"
+                    text: "Design, implementation and evaluation of a spatial jitter technique 
+                        caused by asynchronous input and output rates experimented on displays 
+                        with 90Hz and more. The project required to compensate for the jitter 
+                        in real time for specific devices (e.g. Pixel 4) using input events 
+                        resampling without impacting performance and precision. The technique 
+                        is actually implemented and used in Chrome for Android. See publication 
+                        for details."
+                    technologies: "C++"
+                    year: "2019"
+                    duration: "14 weeks"
+                    status: "Software Engineer Intern"
+                    location: "Chrome, Input Dev team, Google, Kitchener, ON, Canada"
+                    icon: "icon_chromium_asynchronicity.png"
+                    links:
+                        doi: "https://dx.doi.org/10.1145/3379337.3415833"
+                        pdf: "https://hal.inria.fr/hal-02919191/document"
+                        sources: "https://cristal.univ-lille.fr/~casiez/async/"
+                -
+                    title: "Esquisse"
+                    text: "Design, implementation and evaluation of 3D staging techniques 
+                        to facilitate the production of vector-based illustrations. 
+                        Esquisse is developped as a Blender add-on, proposing 3D 
+                        interaction techniques to ease the manipulation of 3D objects and 
+                        embeds an innovative vector-based NPR rendering engine based on 
+                        state of the art rendering techniques. See publication for details."
+                    technologies: "Blender, python, C++, CGAL Library"
+                    year: "2018"
+                    duration: "PhD 1st year"
+                    status: "PhD"
+                    location: "Loki team, University of Lille, Inria Lille Nord Europe, Villeneuve-d'Ascq, France"
+                    icon: "icon_esquisse.png"
+                    links:
+                        doi: "https://doi.org/10.1007/978-3-030-29384-0_30"
+                        pdf: "https://hal.inria.fr/hal-02293837/document"
+                        video: "https://www.youtube.com/watch?v=X2UdHXrvUg0"
+                        presentation: "https://www.youtube.com/watch?v=FAtI41SaqtY"
+                        github: "https://github.com/LokiResearch/Esquisse"        
+                -
+                    title: "TurboMouse"
+                    text: "Design, implementation and evaluation of a latency compensation 
+                        technique on desktop computers using a high frequency accelerometer 
+                        embedded in the mouse. This project required specific optimizations 
+                        to synchronize multiple input sources streams and compute trajectory 
+                        predictions in real-time. See publication for details."
+                    technologies: "C++, Qt Framework, Arduino"
+                    year: "2017"
+                    duration: "6 months"
+                    status: "Master's Degree internship"
+                    location: "Mjolnir team, Inria Lille Nord Europe, Villeneuve-d'Ascq, France"
+                    icon: "icon_turbomouse.png"
+                    links:
+                        doi: "https://doi.org/10.1145/3173574.317418"
+                        pdf: "https://hal.inria.fr/hal-01714204/document"
+                        video: "https://www.youtube.com/watch?v=qCIrOjHrvQw"
+                        presentation: "https://www.youtube.com/watch?v=FAtI41SaqtY"
+                        sources: "https://axantoine.com/documents/TurboMouse-2020-02-13.zip"
+                -
+                    title: "ForceEdge"
+                    text: "Design, implementation and evaluation of autoscroll interaction 
+                            techniques on both desktop and touch-based force sensitive 
+                            devices. This project required to design a cross-platform 
+                            technique deliver the same user experience on both desktop 
+                            and mobiles force-sensitive input surfaces. See publication 
+                            for details."
+                    technologies: "Objective-C, iOS, macOS"
+                    year: "2016"
+                    duration: "3 months"
+                    status: "Master's Degree internship"
+                    location: "Mjolnir team, Inria Lille Nord Europe, Villeneuve-d’Ascq, France"
+                    icon: "icon_forceedge.png"
+                    links:
+                        doi: "https://doi.org/10.1145/3025453.3025605"
+                        pdf: "https://hal.inria.fr/hal-01444366/document"
+                        video: "https://www.youtube.com/watch?v=Ym6rPM0-2jc"
+        
+        minor_projects:
+            name: "Minor projects"
+            items:
+                -
+                    title: "HandSketch: Vectorial draw creation from 3D scene tool."
+                    text: "Tool allowing the easy creation of a SVG (vectorial) file from 
+                            a Blender 3D scene. User can choose visual rendering strokes 
+                            (based on Blender.Freestyle) and add additionnal vectorial 
+                            information from external files."
+                    technologies: "python, Blender"
+                    year: "2017"
+                    duration: "3 months"
+                    status: "Master's Degree Project"
+                    location: "University of Lille"
+                    icon: "icon_handsketch.png"
+                    links:
+                        video: "https://www.youtube.com/watch?v=myT7bWZXaDc"
+                -
+                    title: "360 Video player"
+                    text: "Implementation of a 360 video player in a Web browser using 
+                            WebGL 2.0."
+                    technologies: "javascript, WebGL"
+                    year: "2016"
+                    duration: "1 week"
+                    status: "Master's Degree Project"
+                    location: "University of Lille"
+                    icon: "icon_360.png"
+                    links: ""
+                -
+                    title: "Virtual Reality Navigation Technique"
+                    text: "Implementation of a virtual reality navigation technique in 
+                            Unity3D with Occulus Rift using the iPhone 6S inboard gyroscope 
+                            for orientation control and the force sensitive touchscreen 
+                            for speed control."
+                    technologies: "C#, Unity"
+                    year: "2016"
+                    duration: "2 months"
+                    status: "Master's Degree Project"
+                    location: "University of Lille"
+                    icon: "icon_navigation.png"
+                    links: ""
+                -
+                    title: "Conté: Multimodal Input Inspired by an Artist's Crayon"
+                    text: "This project aims map how to  different functionnalities to 
+                            each side of an external pen (e.g. Conté pen) on a touch 
+                            screen using a resistive sensor."
+                    technologies: "C++, Qt Framework"
+                    year: "2014"
+                    duration: "3 months"
+                    status: "Technology Degree Project"
+                    location: "University of Lille"
+                    icon: "icon_conte.png"
+                    links:
+                        video: "https://www.youtube.com/watch?v=myT7bWZXaDc"
+
+################################## EXPERIENCE ##################################
+experience:
+    name: "Experience"
+    subsections:
+        positions:
+            name: "Positions"
+            items:
+                - 
+                    title: "PhD Student, Computer Sciences, Human Computer Interaction"
+                    years: "2017 - 2021"
+                    extra_infos: "ends Jan. 4th"
+                    text: "CRIStAL - University of Lille. 59650 Villeneuve-d'Ascq, France.
+                            <br>Loki team, Inria Lille Nord Europe. 59650 Villeneuve-d'Ascq, France."
+                -
+                    title: "Software Engineer Intern, Google"
+                    years: "2019"
+                    extra_infos: "14 weeks"
+                    text: "Chrome, Input Dev team, Google, Kitchener, ON, Canada"
+
+        teachings:
+            name: "Teachings"
+            items:
+                -
+                    title: "PhD Teaching Assistant - Libre Office Calc"
+                    years: "2018 - 2020"
+                    extra_infos: "64H"
+                    text: "Introduction to LibreOffice Calc
+                            <br>IUT A, University of Lille, 59650 Villeneuve-d'Ascq, France."
+                -
+                    title: "PhD Teaching Assistant - HCI"
+                    years: "2018 - 2020"
+                    extra_infos: "64H"
+                    text: "Introduction to Human Computer Interaction
+                            <br>IUT A, University of Lille, 59650 Villeneuve-d'Ascq, France."
+                -
+                    title: "Support Teaching"
+                    years: "2015"
+                    extra_infos: "72H"
+                    text: "Helping students having difficulties to understand and practice Oriented Object with Java.
+                            <br>IUT A, University of Lille, 59650 Villeneuve-d'Ascq, France."
+
+
+################################## EDUCATION ###################################
+education:
+    name: "Education"
+    items:
+        - 
+            title: "PhD, Computer Sciences, Human Computer Interaction"
+            years: "2017 - 2021"
+            text: "CRIStAL - University of Lille. 59650 Villeneuve-d'Ascq, France.
+                    <br>Loki team, Inria Lille Nord Europe. 59650 Villeneuve-d'Ascq, France."
+        - 
+            title: "Master's Degree, 2nd year (M2), Computer Sciences"
+            years: "2016 - 2017"
+            text: "Speciality Image Vision Interaction (IVI), 15.49/20, Good Honors
+                    <br>University of Lille. 59650 Villeneuve-d'Ascq, France"
+        - 
+            title: "Master's Degree, 1st year (M1), Computer Sciences"
+            years: "2015 - 2016"
+            text: "16.13/20, ranking 2/139, Exceptional Honors
+                    <br>University of Lille. 59650 Villeneuve-d'Ascq, France"
+        - 
+            title: "Bachelor's Degree, Computer Sciences"
+            years: "2014 - 2015"
+            text: "15.14/20, Good Honors
+                    <br>University of Lille. 59650 Villeneuve-d'Ascq, France"
+        - 
+            title: "Technology Degree, Computer Sciences"
+            years: "2012 - 2014"
+            text: "IUT A, University of Lille. 59650 Villeneuve-d'Ascq, France"
+        - 
+            title: "CPGE PCSI"
+            years: "2011 - 2012"
+            text: "Lycée Henri Wallon. 59300 Valenciennes, France."
+
+
+################################# PUBLICATIONS #################################
+publications:
+    name: "Publications"
+    subsections:
+        international:
+            name: "International Conferences"
+            items:
+                -
+                    title: "Modeling and Reducing Spatial Jitter caused by Asynchronous Input and Output Rates"
+                    icon: "icon_chromium_asynchronicity.png"
+                    conf_short: "UIST'20"
+                    conf_long: "Proceedings of UIST'20, the 33rd ACM Symposium on User Interface Software and Technology, ACM"
+                    presenter: true
+                    authors: 
+                        - "axel.antoine"
+                        - "mathieu.nancel"
+                        - "ella.ge"
+                        - "jingjie.zheng"
+                        - "navid.zolghadr"
+                        - "gery.casiez"
+                    links:
+                        doi: "https://dx.doi.org/10.1145/3379337.3415833"
+                        pdf: "https://hal.inria.fr/hal-02919191/document"
+                        sources: "https://cristal.univ-lille.fr/~casiez/async"
+                -
+                    title: "Esquisse: Using 3D Models Staging to Facilitate the Creation of Vector-based Trace Figures"
+                    icon: "icon_esquisse.png"
+                    conf_short: "Interact'19"
+                    conf_long: "Proceedings of Interact'19, the 17th IFIP TCI3 Conference on Human-Computer Interaction, Springer"
+                    presenter: false
+                    authors: 
+                        - "axel.antoine"
+                        - "sylvain.malacria"
+                        - "nicolai.marquardt"
+                        - "gery.casiez"
+                    links:
+                        doi: "https://doi.org/10.1007/978-3-030-29384-0_30"
+                        pdf: "https://hal.inria.fr/hal-02293837/document"
+                        video: "https://www.youtube.com/watch?v=X2UdHXrvUg0"
+                        github: "https://github.com/LokiResearch/Esquisse"
+                -
+                    title: "Using High Frequency Accelerometer and Mouse to Compensate for End-to-end Latency in Indirect Interaction"
+                    icon: "icon_turbomouse.png"
+                    conf_short: "CHI'18"
+                    conf_long: "Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems, ACM"
+                    presenter: true
+                    authors: 
+                        - "axel.antoine"
+                        - "sylvain.malacria"
+                        - "gery.casiez"
+                    links:
+                        doi: "https://doi.org/10.1145/3173574.3174183"
+                        pdf: "https://hal.inria.fr/hal-01714204/document"
+                        video: "https://www.youtube.com/watch?v=qCIrOjHrvQw"
+                        presentation: "https://www.youtube.com/watch?v=FAtI41SaqtY"
+                        sources: "https://axantoine.com/sources/TurboMouse-2020-02-13.zip"
+                -
+                    title: "ForceEdge: Controlling Autoscroll on Both Desktop and Mobile Computers Using the Force"
+                    icon: "icon_forceedge.png"
+                    conf_short: "CHI'17"
+                    conf_long: "Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems, ACM"
+                    presenter: false
+                    authors: 
+                        - "axel.antoine"
+                        - "sylvain.malacria"
+                        - "gery.casiez"
+                    links:
+                        doi: "https://doi.org/10.1145/3025453.3025605"
+                        pdf: "https://hal.inria.fr/hal-01444366/document"
+                        video: "https://www.youtube.com/watch?v=Ym6rPM0-2jc"
+   
+        local:
+            name: "National Conferences"
+            items: []
+
+        poster_demo:
+            name: "Posters and Demonstrations"
+            items: 
+                -
+                    title: "TurboMouse: End-to-end Latency Compensation in Indirect Interaction"
+                    icon: "icon_turbomouse.png"
+                    conf_short: "CHI'18"
+                    conf_long: "Extended Abstracts of the 2018 CHI Conference on Human Factors in Computing Systems, ACM"
+                    presenter: true
+                    authors: 
+                        - "axel.antoine"
+                        - "sylvain.malacria"
+                        - "gery.casiez"
+                    links:
+                        doi: "https://doi.org/10.1145/3170427.3186542"
+                        pdf: "https://hal.inria.fr/hal-01726763/document"
+                -
+                    title: "Utilisation de la force sur pavés tactiles pour le défilement automatique"
+                    icon: "icon_forceedge_ihm.png"
+                    conf_short: "IHM'16"
+                    conf_long: "Actes De La 28Ième Conférence Francophone Sur L'Interaction Homme-Machine, 264--270, ACM"
+                    presenter: true
+                    authors: 
+                        - "axel.antoine"
+                        - "sylvain.malacria"
+                        - "gery.casiez"
+                    links:
+                        doi: "https://doi.org/10.1145/3004107.3004137"
+                        pdf: "https://hal.archives-ouvertes.fr/hal-01384315/document"
+
+
+#################################### PEOPLE ####################################
+people:
+    axel.antoine:
+        name: "Axel Antoine"
+        website: "https://axantoine.com"
+    mathieu.nancel:
+        name: "Mathieu Nancel"
+        website: "http://mathieu.nancel.net"
+    ella.ge:
+        name: "Ella Ge"
+    jingjie.zheng:
+        name: "Jingjie Zheng"
+    navid.zolghadr:
+        name: "Navid Zolghadr"
+    gery.casiez:
+        name: "Géry Casiez"
+        website: "https://cristal.univ-lille.fr/~casiez/"
+    sylvain.malacria:
+        name: "Sylvain Malacria"
+        website: "http://www.malacria.com"
+    nicolai.marquardt:
+        name: "Nicolai Marquardt"
+        website: "https://uclic.ucl.ac.uk/people/nicolai-marquardt"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
