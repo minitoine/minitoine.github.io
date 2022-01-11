@@ -22,10 +22,6 @@
 		display: block;
 	}
 
-	body {
-		line-height: 1;
-	}
-
 	ol, ul {
 		list-style: none;
 	}
@@ -829,9 +825,7 @@
 /* Basic */
 
 	body, input, textarea, select {
-		font-family: 'Helvetica Neue light', sans-serif;
-		line-height: 1.85em;
-		color: black;
+		font-family: 'Helvetica Neue';
 		font-weight: 300;
 	}
 
@@ -1239,7 +1233,6 @@
 			text-decoration: none;
 			font-style: normal;
 			font-weight: normal;
-			line-height: 1;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 		}
@@ -1566,14 +1559,12 @@
 
 				#top p {
 					font-size: 1.5em;
-					line-height: 1.75em;
 				}
 
 		/* Copyright */
 
 			#copyright {
 				font-size: 1em;
-				line-height: 1em;
 			}
 
 				#copyright li {
@@ -1639,7 +1630,6 @@
 		/* Basic */
 
 			body, input, textarea, select {
-				line-height: 1.75em;
 				font-size: 10pt;
 				letter-spacing: 0;
 			}
@@ -1651,7 +1641,6 @@
 
 			h1 {
 				font-size: 2.25em;
-				line-height: 1.25em;
 			}
 
 			header {

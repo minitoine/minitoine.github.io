@@ -2,7 +2,7 @@ import os
 import yaml
 from bs4 import BeautifulSoup
 
-links_order = ['doi', 'pdf', 'video', 'presentation', 'github', 'sources',
+links_order = ['doi', 'pdf', 'video', 'presentation', 'github', 'code',
     'linkedin','facebook','mail', 'resume']
 
 def get_fontawesome_icon_for_link_type(link_type):
@@ -16,7 +16,7 @@ def get_fontawesome_icon_for_link_type(link_type):
         return 'fab fa-github'
     elif link_type == 'presentation':
         return 'fab fa-slideshare'
-    elif link_type == 'sources':
+    elif link_type == 'code':
         return 'fas fa-download'
     elif link_type == 'mail':
         return 'fas fa-envelope-square'
@@ -60,12 +60,11 @@ def get_authors_list_html(data, authors):
             html += ', '
     return html
 
-
 def get_project_item_html(data, project):
-    html = '''
-    <div class="row" id="article_item">
-        <img class="2u" alt="" src="images/{icon}"/>     
-        <div class="10u">
+    return '''
+    <div class="row myrow" id="article_item">
+        <img class="1u mycol" alt="" src="images/{icon}"/>
+        <div class="11u mycol colAfterImage">
             <div>
                 <b>{title}</b>
             </div>
@@ -73,8 +72,8 @@ def get_project_item_html(data, project):
                 <i>{year}, {duration}. {status}, {location}</i>
             </div>
             <div style="text-align: justify; text-justify: inter-word;">
-                {text} [{technologies}]
-            </div>  
+                {text} <i>[{technologies}]<i>
+            </div>
             <div>
                 {links}
             </div>
@@ -89,13 +88,12 @@ def get_project_item_html(data, project):
         text = project["text"],
         technologies = project["technologies"],
         links = get_links_html(project["links"]))
-    return html
 
 def get_publication_item_html(data, publication):
-    html = '''
-    <div class="row" id="article_item">
-        <img class="2u" alt="" src="images/{icon}"/>     
-        <div class="10u">
+    return '''
+    <div class="row myrow" id="article_item">
+        <img class="1u mycol" alt="" src="images/{icon}"/>
+        <div class="11u mycol colAfterImage">
             <div>
                 <b>{title}</b>
             </div>
@@ -120,14 +118,13 @@ def get_publication_item_html(data, publication):
         authors = get_authors_list_html(data, publication.get("authors")),
         conference = publication["conf_long"],
         links = get_links_html(publication["links"]))
-    return html
 
 def get_infos_html(infos):
     return '''
     <div class="container">
-        <div class="row">
-            <image class="3u" alt="" src="images/{image}" style="border-radius: 50%;"/>      
-            <div class="9u">
+        <div class="row myrow">
+            <image class="3u mycol" alt="" src="images/{image}" style="border-radius: 50%;"/>
+            <div class="9u mycol">
                 <h3> {name} </h3>
                 <p style="text-align: justify; text-justify: inter-word;">
                     {text}
@@ -145,13 +142,13 @@ def get_infos_html(infos):
 
 def get_text_item_html(data, item):
     html = '''
-    <div class="row" id="article_item">
-        <div class="2u" id="article_year">
+    <div class="row myrow" id="article_item">
+        <div class="2u mycol" id="article_year">
             {years}
             <br>
             <i>{extra_infos}</i>
         </div>  
-        <div class="10u">
+        <div class="10u mycol">
             <div><b>{title}</b></div>
             <div>{text}</div>
         </div>

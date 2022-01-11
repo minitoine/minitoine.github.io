@@ -2,20 +2,18 @@
 infos:
     name: "Axel Antoine"
     image: "me.jpg"
-    text: "I am a PhD student at the University of Lille, France, interested in 
-        Human Computer Interaction, currently doing my PhD with Géry Casiez and 
-        Sylvain Malacria in the Loki team at Inria Lille - Nord Europe in France 
-        until January 8th 2021. While I can adapt to many situations and technologies, 
-        I have mostly worked on force based techniques to control autoscroll on 
-        mobile devices and desktop computers, on latency compensation techniques 
-        on desktop computers using hardware improvements and on mobile devices 
-        through software solutions within Chromium and on 3D staging techniques 
-        to ease the production of vector-based illustrations."
+    text: "I am Research Software Engineer in the Loki team at Inria Lille - Nord Europe in France.
+        Graduated with my PhD, I can adapt to many situations and technologies and have mostly worked
+        on projects and proofs of concept in the Human Computer Interaction field (HCI) such as:
+        force based techniques to control autoscroll speed on iOS devices and desktop computers,
+        latency compensation techniques on desktop computers using a hardware customized mouse and on mobile devices
+        through software compensation techniques within Chromium and on 3D staging techniques
+        to ease the production of vector-based illustrations in Blender."
     links:
         mail: "mailto:ax.antoine@gmail.com"
         linkedin: "https://www.linkedin.com/in/axel-antoine-318b07105"
         facebook: "https://www.facebook.com/Axel.Antoine"
-        resume: "./documents/AxelAntoine_resume.pdf"
+        resume: "./AxelAntoine_resume.pdf"
 
 ################################### PROJECTS ###################################
 projects:
@@ -24,6 +22,38 @@ projects:
         major_projects:
             name: "Major Projects"
             items:
+                -
+                    title: "Esquisse++"
+                    text: "This project aims to develop a new version of the Blender add-on Esquisse created during my PhD
+                        for the web using Typescript and Three.js. This project involves creating a vector-based render engine from scratch."
+                    year: "2021 - current"
+                    duration: "2 years"
+                    status: "Research Software Engineer"
+                    location: "Loki team, University of Lille, Inria Lille Nord Europe, Villeneuve-d'Ascq, France"
+                    technologies: "C++, Typescript, Node.js, Three.js, React, Emscripten"
+                    icon: "icon_esquisse++.png"
+                    links:
+                        -
+
+                -
+                    title: "Interaction Illustration Taxonomy"
+                    text: "This project proposes a new taxonomy of figures representing interaction
+                        scenarios and provides a concise synthesis of visual strategies used to create them.
+                        We also provide three online open-source softwares facilitating the exploration of
+                        the created dataset, available on github. See publication for details."
+                    year: "2020"
+                    duration: "PhD 3rd year"
+                    technologies: "python, javascript, bootstrap"
+                    icon: "icon_taxonomy.jpg"
+                    status: "PhD"
+                    location: "Loki team, University of Lille, Inria Lille Nord Europe, Villeneuve-d'Ascq, France"
+                    links:
+                        doi: "https://dx.doi.org/10.1145/3411764.3445586"
+                        pdf: "https://hal.archives-ouvertes.fr/hal-03137867"
+                        github: "https://github.com/LokiResearch/IllustrationTaxonomy"
+                        video: "https://www.youtube.com/watch?v=tYBU9S6TsI8"
+                        presentation: "https://www.youtube.com/watch?v=XxTyd5L77sY"
+
                 -
                     title: "Spatial Jitter compensation in Chromium"
                     text: "Design, implementation and evaluation of a spatial jitter technique 
@@ -42,7 +72,7 @@ projects:
                     links:
                         doi: "https://dx.doi.org/10.1145/3379337.3415833"
                         pdf: "https://hal.inria.fr/hal-02919191/document"
-                        sources: "https://cristal.univ-lille.fr/~casiez/async/"
+                        code: "https://cristal.univ-lille.fr/~casiez/async/"
                 -
                     title: "Esquisse"
                     text: "Design, implementation and evaluation of 3D staging techniques 
@@ -81,7 +111,7 @@ projects:
                         pdf: "https://hal.inria.fr/hal-01714204/document"
                         video: "https://www.youtube.com/watch?v=qCIrOjHrvQw"
                         presentation: "https://www.youtube.com/watch?v=FAtI41SaqtY"
-                        sources: "https://axantoine.com/documents/TurboMouse-2020-02-13.zip"
+                        code: "https://axantoine.com/documents/TurboMouse-2020-02-13.zip"
                 -
                     title: "ForceEdge"
                     text: "Design, implementation and evaluation of autoscroll interaction 
@@ -163,10 +193,14 @@ experience:
         positions:
             name: "Positions"
             items:
+                -
+                    title: "Research Software Engineer, Inria"
+                    years: "2021 - 2023"
+                    extra_infos: "ends 4th Jan. 2023"
+                    text: "Loki team, Inria Lille Nord Europe. 59650 Villeneuve-d'Ascq, France."
                 - 
                     title: "PhD Student, Computer Sciences, Human Computer Interaction"
                     years: "2017 - 2021"
-                    extra_infos: "ends Jan. 4th"
                     text: "CRIStAL - University of Lille. 59650 Villeneuve-d'Ascq, France.
                             <br>Loki team, Inria Lille Nord Europe. 59650 Villeneuve-d'Ascq, France."
                 -
@@ -239,6 +273,22 @@ publications:
         international:
             name: "International Conferences"
             items:
+                -   title: "Interaction Illustration Taxonomy: Classification of Styles and Techniques for Visually Representing Interaction Scenarios"
+                    icon: "icon_taxonomy.jpg"
+                    conf_short: "CHI'21, Honorable Mention Award"
+                    conf_long: "Proceedings of CHI'21, the 38th Conference on Human Factors in Computing Systems, ACM"
+                    presenter: true
+                    authors:
+                        - "axel.antoine"
+                        - "sylvain.malacria"
+                        - "nicolai.marquardt"
+                        - "gery.casiez"
+                    links:
+                        doi: "https://dx.doi.org/10.1145/3411764.3445586"
+                        pdf: "https://hal.archives-ouvertes.fr/hal-03137867"
+                        github: "https://github.com/LokiResearch/IllustrationTaxonomy"
+                        video: "https://www.youtube.com/watch?v=tYBU9S6TsI8"
+                        presentation: "https://www.youtube.com/watch?v=XxTyd5L77sY"
                 -
                     title: "Modeling and Reducing Spatial Jitter caused by Asynchronous Input and Output Rates"
                     icon: "icon_chromium_asynchronicity.png"
@@ -287,7 +337,7 @@ publications:
                         pdf: "https://hal.inria.fr/hal-01714204/document"
                         video: "https://www.youtube.com/watch?v=qCIrOjHrvQw"
                         presentation: "https://www.youtube.com/watch?v=FAtI41SaqtY"
-                        sources: "https://axantoine.com/sources/TurboMouse-2020-02-13.zip"
+                        code: "https://axantoine.com/documents/TurboMouse-2020-02-13.zip"
                 -
                     title: "ForceEdge: Controlling Autoscroll on Both Desktop and Mobile Computers Using the Force"
                     icon: "icon_forceedge.png"
@@ -303,7 +353,7 @@ publications:
                         pdf: "https://hal.inria.fr/hal-01444366/document"
                         video: "https://www.youtube.com/watch?v=Ym6rPM0-2jc"
    
-        local:
+        national:
             name: "National Conferences"
             items: []
 
