@@ -174,8 +174,8 @@ projects:
                     links: ""
                 -
                     title: "Conté: Multimodal Input Inspired by an Artist's Crayon"
-                    text: "This project aims map how to  different functionnalities to 
-                            each side of an external pen (e.g. Conté pen) on a touch 
+                    text: "This project aims to associate different functionnalities to
+                            each side of an external pen (e.g. Conté pen) in contact with a touch
                             screen using a resistive sensor."
                     technologies: "C++, Qt Framework"
                     year: "2014"
