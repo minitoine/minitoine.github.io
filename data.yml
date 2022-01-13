@@ -3,17 +3,22 @@ infos:
     name: "Axel Antoine"
     image: "me.jpg"
     text: "I am Research Software Engineer in the Loki team at Inria Lille - Nord Europe in France.
-        Graduated with my PhD, I can adapt to many situations and technologies and have mostly worked
+        Graduated with my PhD, I can adapt to many situations and technologies. I have mostly worked
         on projects and proofs of concept in the Human Computer Interaction field (HCI) such as:
         force based techniques to control autoscroll speed on iOS devices and desktop computers,
         latency compensation techniques on desktop computers using a hardware customized mouse and on mobile devices
-        through software compensation techniques within Chromium and on 3D staging techniques
+        through software compensation techniques within Chromium and 3D staging techniques
         to ease the production of vector-based illustrations in Blender."
     links:
-        mail: "mailto:ax.antoine@gmail.com"
-        linkedin: "https://www.linkedin.com/in/axel-antoine-318b07105"
-        facebook: "https://www.facebook.com/Axel.Antoine"
-        resume: "./AxelAntoine_resume.pdf"
+        mail:
+            url: "mailto:ax.antoine@gmail.com"
+        linkedin:
+            url: "https://www.linkedin.com/in/axel-antoine-318b07105"
+        facebook:
+            url: "https://www.facebook.com/Axel.Antoine"
+        resume:
+            name: "resume [eng]"
+            url: "./AxelAntoine_resume_en.pdf"
 
 ################################### PROJECTS ###################################
 projects:
@@ -32,8 +37,7 @@ projects:
                     location: "Loki team, University of Lille, Inria Lille Nord Europe, Villeneuve-d'Ascq, France"
                     technologies: "C++, Typescript, Node.js, Three.js, React, Emscripten"
                     icon: "icon_esquisse++.png"
-                    links:
-                        -
+                    links: []
 
                 -
                     title: "Interaction Illustration Taxonomy"
@@ -42,17 +46,22 @@ projects:
                         We also provide three online open-source softwares facilitating the exploration of
                         the created dataset, available on github. See publication for details."
                     year: "2020"
-                    duration: "PhD 3rd year"
-                    technologies: "python, javascript, bootstrap"
+                    duration: "PhD 2nd year"
+                    technologies: "python, javascript, bootstrap, R"
                     icon: "icon_taxonomy.jpg"
                     status: "PhD"
                     location: "Loki team, University of Lille, Inria Lille Nord Europe, Villeneuve-d'Ascq, France"
                     links:
-                        doi: "https://dx.doi.org/10.1145/3411764.3445586"
-                        pdf: "https://hal.archives-ouvertes.fr/hal-03137867"
-                        github: "https://github.com/LokiResearch/IllustrationTaxonomy"
-                        video: "https://www.youtube.com/watch?v=tYBU9S6TsI8"
-                        presentation: "https://www.youtube.com/watch?v=XxTyd5L77sY"
+                        doi:
+                            url: "https://dx.doi.org/10.1145/3411764.3445586"
+                        pdf:
+                            url: "https://hal.archives-ouvertes.fr/hal-03137867"
+                        github:
+                            url: "https://github.com/LokiResearch/IllustrationTaxonomy"
+                        video:
+                            url: "https://www.youtube.com/watch?v=tYBU9S6TsI8"
+                        presentation:
+                            url: "https://www.youtube.com/watch?v=XxTyd5L77sY"
 
                 -
                     title: "Spatial Jitter compensation in Chromium"
@@ -63,16 +72,19 @@ projects:
                         resampling without impacting performance and precision. The technique 
                         is actually implemented and used in Chrome for Android. See publication 
                         for details."
-                    technologies: "C++"
+                    technologies: "C++, R"
                     year: "2019"
                     duration: "14 weeks"
                     status: "Software Engineer Intern"
                     location: "Chrome, Input Dev team, Google, Kitchener, ON, Canada"
                     icon: "icon_chromium_asynchronicity.png"
                     links:
-                        doi: "https://dx.doi.org/10.1145/3379337.3415833"
-                        pdf: "https://hal.inria.fr/hal-02919191/document"
-                        code: "https://cristal.univ-lille.fr/~casiez/async/"
+                        doi:
+                            url: "https://dx.doi.org/10.1145/3379337.3415833"
+                        pdf:
+                            url: "https://hal.inria.fr/hal-02919191/document"
+                        code:
+                            url: "https://cristal.univ-lille.fr/~casiez/async/"
                 -
                     title: "Esquisse"
                     text: "Design, implementation and evaluation of 3D staging techniques 
@@ -81,18 +93,23 @@ projects:
                         interaction techniques to ease the manipulation of 3D objects and 
                         embeds an innovative vector-based NPR rendering engine based on 
                         state of the art rendering techniques. See publication for details."
-                    technologies: "Blender, python, C++, CGAL Library"
+                    technologies: "Blender, python, C++, CGAL Library, R"
                     year: "2018"
                     duration: "PhD 1st year"
                     status: "PhD"
                     location: "Loki team, University of Lille, Inria Lille Nord Europe, Villeneuve-d'Ascq, France"
                     icon: "icon_esquisse.png"
                     links:
-                        doi: "https://doi.org/10.1007/978-3-030-29384-0_30"
-                        pdf: "https://hal.inria.fr/hal-02293837/document"
-                        video: "https://www.youtube.com/watch?v=X2UdHXrvUg0"
-                        presentation: "https://www.youtube.com/watch?v=FAtI41SaqtY"
-                        github: "https://github.com/LokiResearch/Esquisse"        
+                        doi:
+                            url: "https://doi.org/10.1007/978-3-030-29384-0_30"
+                        pdf:
+                            url: "https://hal.inria.fr/hal-02293837/document"
+                        video:
+                            url: "https://www.youtube.com/watch?v=X2UdHXrvUg0"
+                        presentation:
+                            url: "https://www.youtube.com/watch?v=FAtI41SaqtY"
+                        github:
+                            url: "https://github.com/LokiResearch/Esquisse"
                 -
                     title: "TurboMouse"
                     text: "Design, implementation and evaluation of a latency compensation 
@@ -100,18 +117,23 @@ projects:
                         embedded in the mouse. This project required specific optimizations 
                         to synchronize multiple input sources streams and compute trajectory 
                         predictions in real-time. See publication for details."
-                    technologies: "C++, Qt Framework, Arduino"
+                    technologies: "C++, Qt Framework, Arduino, R"
                     year: "2017"
                     duration: "6 months"
                     status: "Master's Degree internship"
                     location: "Mjolnir team, Inria Lille Nord Europe, Villeneuve-d'Ascq, France"
                     icon: "icon_turbomouse.png"
                     links:
-                        doi: "https://doi.org/10.1145/3173574.317418"
-                        pdf: "https://hal.inria.fr/hal-01714204/document"
-                        video: "https://www.youtube.com/watch?v=qCIrOjHrvQw"
-                        presentation: "https://www.youtube.com/watch?v=FAtI41SaqtY"
-                        code: "https://axantoine.com/documents/TurboMouse-2020-02-13.zip"
+                        doi:
+                            url: "https://doi.org/10.1145/3173574.317418"
+                        pdf:
+                            url: "https://hal.inria.fr/hal-01714204/document"
+                        video:
+                            url: "https://www.youtube.com/watch?v=qCIrOjHrvQw"
+                        presentation:
+                            url: "https://www.youtube.com/watch?v=FAtI41SaqtY"
+                        code:
+                            url: "http://cristal.univ-lille.fr/~casiez/turbomouse/"
                 -
                     title: "ForceEdge"
                     text: "Design, implementation and evaluation of autoscroll interaction 
@@ -120,16 +142,19 @@ projects:
                             technique deliver the same user experience on both desktop 
                             and mobiles force-sensitive input surfaces. See publication 
                             for details."
-                    technologies: "Objective-C, iOS, macOS"
+                    technologies: "Objective-C, iOS, macOS, R"
                     year: "2016"
                     duration: "3 months"
                     status: "Master's Degree internship"
                     location: "Mjolnir team, Inria Lille Nord Europe, Villeneuve-d’Ascq, France"
                     icon: "icon_forceedge.png"
                     links:
-                        doi: "https://doi.org/10.1145/3025453.3025605"
-                        pdf: "https://hal.inria.fr/hal-01444366/document"
-                        video: "https://www.youtube.com/watch?v=Ym6rPM0-2jc"
+                        doi:
+                            url: "https://doi.org/10.1145/3025453.3025605"
+                        pdf:
+                            url: "https://hal.inria.fr/hal-01444366/document"
+                        video:
+                            url: "https://www.youtube.com/watch?v=Ym6rPM0-2jc"
         
         minor_projects:
             name: "Minor projects"
@@ -147,7 +172,8 @@ projects:
                     location: "University of Lille"
                     icon: "icon_handsketch.png"
                     links:
-                        video: "https://www.youtube.com/watch?v=myT7bWZXaDc"
+                        video:
+                            url: "https://www.youtube.com/watch?v=myT7bWZXaDc"
                 -
                     title: "360 Video player"
                     text: "Implementation of a 360 video player in a Web browser using 
@@ -158,7 +184,7 @@ projects:
                     status: "Master's Degree Project"
                     location: "University of Lille"
                     icon: "icon_360.png"
-                    links: ""
+                    links: []
                 -
                     title: "Virtual Reality Navigation Technique"
                     text: "Implementation of a virtual reality navigation technique in 
@@ -171,7 +197,7 @@ projects:
                     status: "Master's Degree Project"
                     location: "University of Lille"
                     icon: "icon_navigation.png"
-                    links: ""
+                    links: []
                 -
                     title: "Conté: Multimodal Input Inspired by an Artist's Crayon"
                     text: "This project aims to associate different functionnalities to
@@ -184,7 +210,8 @@ projects:
                     location: "University of Lille"
                     icon: "icon_conte.png"
                     links:
-                        video: "https://www.youtube.com/watch?v=myT7bWZXaDc"
+                        video:
+                            url: "https://www.youtube.com/watch?v=myT7bWZXaDc"
 
 ################################## EXPERIENCE ##################################
 experience:
@@ -270,6 +297,24 @@ education:
 publications:
     name: "Publications"
     subsections:
+        phd:
+            name: "Thesis"
+            items:
+                -   title: "Études des stratégies et conception d’outils pour la production de supports illustratifs d’interaction"
+                    icon: "icon_thesis.png"
+                    conf_short: "defended on 29-01-2021"
+                    conf_long: "École doctorale Sciences pour l'ingénieur, CRIStAL, Université de Lille"
+                    presenter: false
+                    authors: []
+                    links:
+                        pdf:
+                            name: 'thesis [fr]'
+                            url: "https://hal.inria.fr/tel-03366786/"
+                        presentation:
+                            name: 'defense [fr]'
+                            url: "https://www.dropbox.com/s/a3dps01fszmbayn/SoutenanceTheseAxelAntoine.mp4"
+
+
         international:
             name: "International Conferences"
             items:
@@ -284,11 +329,16 @@ publications:
                         - "nicolai.marquardt"
                         - "gery.casiez"
                     links:
-                        doi: "https://dx.doi.org/10.1145/3411764.3445586"
-                        pdf: "https://hal.archives-ouvertes.fr/hal-03137867"
-                        github: "https://github.com/LokiResearch/IllustrationTaxonomy"
-                        video: "https://www.youtube.com/watch?v=tYBU9S6TsI8"
-                        presentation: "https://www.youtube.com/watch?v=XxTyd5L77sY"
+                        doi:
+                            url: "https://dx.doi.org/10.1145/3411764.3445586"
+                        pdf:
+                            url: "https://hal.archives-ouvertes.fr/hal-03137867"
+                        github:
+                            url: "https://github.com/LokiResearch/IllustrationTaxonomy"
+                        video:
+                            url: "https://www.youtube.com/watch?v=tYBU9S6TsI8"
+                        presentation:
+                            url: "https://www.youtube.com/watch?v=XxTyd5L77sY"
                 -
                     title: "Modeling and Reducing Spatial Jitter caused by Asynchronous Input and Output Rates"
                     icon: "icon_chromium_asynchronicity.png"
@@ -303,9 +353,12 @@ publications:
                         - "navid.zolghadr"
                         - "gery.casiez"
                     links:
-                        doi: "https://dx.doi.org/10.1145/3379337.3415833"
-                        pdf: "https://hal.inria.fr/hal-02919191/document"
-                        sources: "https://cristal.univ-lille.fr/~casiez/async"
+                        doi:
+                            url: "https://dx.doi.org/10.1145/3379337.3415833"
+                        pdf:
+                            url: "https://hal.inria.fr/hal-02919191/document"
+                        code:
+                            url: "https://cristal.univ-lille.fr/~casiez/async"
                 -
                     title: "Esquisse: Using 3D Models Staging to Facilitate the Creation of Vector-based Trace Figures"
                     icon: "icon_esquisse.png"
@@ -318,10 +371,14 @@ publications:
                         - "nicolai.marquardt"
                         - "gery.casiez"
                     links:
-                        doi: "https://doi.org/10.1007/978-3-030-29384-0_30"
-                        pdf: "https://hal.inria.fr/hal-02293837/document"
-                        video: "https://www.youtube.com/watch?v=X2UdHXrvUg0"
-                        github: "https://github.com/LokiResearch/Esquisse"
+                        doi:
+                            url: "https://doi.org/10.1007/978-3-030-29384-0_30"
+                        pdf:
+                            url: "https://hal.inria.fr/hal-02293837/document"
+                        video:
+                            url: "https://www.youtube.com/watch?v=X2UdHXrvUg0"
+                        github:
+                            url: "https://github.com/LokiResearch/Esquisse"
                 -
                     title: "Using High Frequency Accelerometer and Mouse to Compensate for End-to-end Latency in Indirect Interaction"
                     icon: "icon_turbomouse.png"
@@ -333,11 +390,16 @@ publications:
                         - "sylvain.malacria"
                         - "gery.casiez"
                     links:
-                        doi: "https://doi.org/10.1145/3173574.3174183"
-                        pdf: "https://hal.inria.fr/hal-01714204/document"
-                        video: "https://www.youtube.com/watch?v=qCIrOjHrvQw"
-                        presentation: "https://www.youtube.com/watch?v=FAtI41SaqtY"
-                        code: "https://axantoine.com/documents/TurboMouse-2020-02-13.zip"
+                        doi:
+                            url: "https://doi.org/10.1145/3173574.3174183"
+                        pdf:
+                            url: "https://hal.inria.fr/hal-01714204/document"
+                        video:
+                            url: "https://www.youtube.com/watch?v=qCIrOjHrvQw"
+                        presentation:
+                            url: "https://www.youtube.com/watch?v=FAtI41SaqtY"
+                        code:
+                            url: "http://cristal.univ-lille.fr/~casiez/turbomouse/"
                 -
                     title: "ForceEdge: Controlling Autoscroll on Both Desktop and Mobile Computers Using the Force"
                     icon: "icon_forceedge.png"
@@ -349,9 +411,12 @@ publications:
                         - "sylvain.malacria"
                         - "gery.casiez"
                     links:
-                        doi: "https://doi.org/10.1145/3025453.3025605"
-                        pdf: "https://hal.inria.fr/hal-01444366/document"
-                        video: "https://www.youtube.com/watch?v=Ym6rPM0-2jc"
+                        doi:
+                            url: "https://doi.org/10.1145/3025453.3025605"
+                        pdf:
+                            url: "https://hal.inria.fr/hal-01444366/document"
+                        video:
+                            url: "https://www.youtube.com/watch?v=Ym6rPM0-2jc"
    
         national:
             name: "National Conferences"
@@ -371,8 +436,10 @@ publications:
                         - "sylvain.malacria"
                         - "gery.casiez"
                     links:
-                        doi: "https://doi.org/10.1145/3170427.3186542"
-                        pdf: "https://hal.inria.fr/hal-01726763/document"
+                        doi:
+                            url: "https://doi.org/10.1145/3170427.3186542"
+                        pdf:
+                            url: "https://hal.inria.fr/hal-01726763/document"
                 -
                     title: "Utilisation de la force sur pavés tactiles pour le défilement automatique"
                     icon: "icon_forceedge_ihm.png"
@@ -384,8 +451,10 @@ publications:
                         - "sylvain.malacria"
                         - "gery.casiez"
                     links:
-                        doi: "https://doi.org/10.1145/3004107.3004137"
-                        pdf: "https://hal.archives-ouvertes.fr/hal-01384315/document"
+                        doi:
+                            url: "https://doi.org/10.1145/3004107.3004137"
+                        pdf:
+                            url: "https://hal.archives-ouvertes.fr/hal-01384315/document"
 
 
 #################################### PEOPLE ####################################

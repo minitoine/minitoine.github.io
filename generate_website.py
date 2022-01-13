@@ -2,10 +2,10 @@ import os
 import yaml
 from bs4 import BeautifulSoup
 
-links_order = ['doi', 'pdf', 'video', 'presentation', 'github', 'code',
+link_types_order = ['doi', 'pdf', 'video', 'presentation', 'github', 'code',
     'linkedin','facebook','mail', 'resume']
 
-def get_fontawesome_icon_for_link_type(link_type):
+def icon_for_link_type(link_type):
     if link_type == 'doi':
         return 'fas fa-link'
     elif link_type == 'pdf':
@@ -26,12 +26,16 @@ def get_fontawesome_icon_for_link_type(link_type):
         return 'fab fa-facebook-square'
     elif link_type == 'resume':
         return 'fas fa-portrait'
+    elif link_type == 'defense':
+        return 'fab fa-slideshare'
 
 def get_links_html(links):
     html = '<ul class="social">'
-    for link in links_order:
-        if link in links:
-            url = links[link]
+    for link_type in link_types_order:
+        if link_type in links:
+            link = links[link_type]
+            url = link.get('url', '#')
+            name = link.get('name', link_type)
             html += '''
             <li>
                 <a href="{url}">
@@ -40,8 +44,8 @@ def get_links_html(links):
                 </a>
             </li>'''.format(
                 url = url,
-                fontawesome_icon = get_fontawesome_icon_for_link_type(link),
-                name = link)
+                fontawesome_icon = icon_for_link_type(link_type),
+                name = name)
     html += "</ul>"
     return html
 
@@ -160,9 +164,7 @@ def get_text_item_html(data, item):
     )
     return html
 
-def get_section_html(data, section_id, item_func):
-
-    section_data = data[section_id]
+def get_section_html(data, section_data, item_func):
 
     content = ''
     if "subsections" in section_data:
@@ -199,28 +201,28 @@ if __name__ == '__main__':
     soup = BeautifulSoup(f.read(), 'html.parser')
     f.close()
 
-    projects = soup.find(id='home')
-    projects.append(BeautifulSoup(get_infos_html(data["infos"]), 'html.parser'))
+    div = soup.find(id='home')
+    div.append(BeautifulSoup(get_infos_html(data["infos"]), 'html.parser'))
 
     print("Generating Projects section...")
     projects = soup.find(id='projects')
     projects.append(BeautifulSoup(get_section_html(
-        data, 'projects', get_project_item_html), 'html.parser'))
+        data, data['projects'], get_project_item_html), 'html.parser'))
 
     print("Generating Publications section...")
     projects = soup.find(id='publications')
     projects.append(BeautifulSoup(get_section_html(
-        data, 'publications', get_publication_item_html), 'html.parser'))
+        data, data['publications'], get_publication_item_html), 'html.parser'))
 
     print("Generating Education section...")
     projects = soup.find(id='education')
     projects.append(BeautifulSoup(get_section_html(
-        data, 'education', get_text_item_html), 'html.parser'))
+        data, data['education'], get_text_item_html), 'html.parser'))
 
     print('Generating Experience section...')
     projects = soup.find(id='experience')
     projects.append(BeautifulSoup(get_section_html(
-        data, "experience", get_text_item_html), "html.parser"))
+        data, data["experience"], get_text_item_html), "html.parser"))
 
 
     
