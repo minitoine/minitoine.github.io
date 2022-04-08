@@ -125,7 +125,7 @@ projects:
                     icon: "icon_turbomouse.png"
                     links:
                         doi:
-                            url: "https://doi.org/10.1145/3173574.317418"
+                            url: "https://doi.org/10.1145/3173574.3174183"
                         pdf:
                             url: "https://hal.inria.fr/hal-01714204/document"
                         video:
@@ -211,7 +211,7 @@ projects:
                     icon: "icon_conte.png"
                     links:
                         video:
-                            url: "https://www.youtube.com/watch?v=myT7bWZXaDc"
+                            url: "https://www.youtube.com/watch?v=8JVgSslNVzs"
 
 ################################## EXPERIENCE ##################################
 experience:
