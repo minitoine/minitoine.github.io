@@ -17,8 +17,8 @@ infos:
         facebook:
             url: "https://www.facebook.com/Axel.Antoine"
         resume:
-            name: "resume [eng]"
-            url: "./AxelAntoine_resume_en.pdf"
+            name: "resume"
+            url: "./Axel-Antoine-Resume.pdf"
 
 ################################### PROJECTS ###################################
 projects:
