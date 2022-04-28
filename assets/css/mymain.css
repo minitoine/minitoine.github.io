@@ -3,7 +3,7 @@
 
 .myrow {
   padding: 0;
-  margin: 1em 0 1em 0;
+  margin: 0;
 }
 
 .mycol {
@@ -13,4 +13,8 @@
 
 .colAfterImage {
   padding-left: 1em;
+}
+
+#article_item {
+  padding-bottom: 1em;
 }

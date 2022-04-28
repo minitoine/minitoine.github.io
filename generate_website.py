@@ -69,11 +69,16 @@ def get_project_item_html(data, project):
     <div class="row myrow" id="article_item">
         <img class="1u mycol" alt="" src="images/{icon}"/>
         <div class="11u mycol colAfterImage">
-            <div>
-                <b>{title}</b>
+            <div class="row myrow">
+                <div class="10u mycol">
+                    <b>{title}</b>
+                </div>
+                <div class="2u mycol">
+                    <i>{year}</i>
+                </div>
             </div>
             <div>
-                <i>{year}, {duration}. {status}, {location}</i>
+                <i>{status}, {location}</i>
             </div>
             <div style="text-align: justify; text-justify: inter-word;">
                 {text} <i>[{technologies}]<i>
@@ -93,16 +98,13 @@ def get_project_item_html(data, project):
         technologies = project["technologies"],
         links = get_links_html(project["links"]))
 
-def get_publication_item_html(data, publication):
+def get_research_item_html(data, publication):
     return '''
     <div class="row myrow" id="article_item">
         <img class="1u mycol" alt="" src="images/{icon}"/>
         <div class="11u mycol colAfterImage">
             <div>
                 <b>{title}</b>
-            </div>
-            <div>
-                <i>{conf_short}{presenter}</i>
             </div>
             <div>
                 <i>{authors}</i>
@@ -118,7 +120,6 @@ def get_publication_item_html(data, publication):
         icon = publication["icon"],
         title = publication["title"],
         conf_short = publication["conf_short"],
-        presenter = ', Presenter' if publication.get('presenter') else '',
         authors = get_authors_list_html(data, publication.get("authors")),
         conference = publication["conf_long"],
         links = get_links_html(publication["links"]))
@@ -127,8 +128,8 @@ def get_infos_html(infos):
     return '''
     <div class="container">
         <div class="row myrow">
-            <image class="3u mycol" alt="" src="images/{image}" style="border-radius: 50%;"/>
-            <div class="9u mycol">
+            <image class="2u mycol" alt="" src="images/{image}" style="border-radius: 50%;"/>
+            <div class="10u mycol">
                 <h3> {name} </h3>
                 <p style="text-align: justify; text-justify: inter-word;">
                     {text}
@@ -209,10 +210,10 @@ if __name__ == '__main__':
     projects.append(BeautifulSoup(get_section_html(
         data, data['projects'], get_project_item_html), 'html.parser'))
 
-    print("Generating Publications section...")
-    projects = soup.find(id='publications')
+    print("Generating Research section...")
+    projects = soup.find(id='research')
     projects.append(BeautifulSoup(get_section_html(
-        data, data['publications'], get_publication_item_html), 'html.parser'))
+        data, data['research'], get_research_item_html), 'html.parser'))
 
     print("Generating Education section...")
     projects = soup.find(id='education')

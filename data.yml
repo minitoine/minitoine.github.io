@@ -264,47 +264,47 @@ education:
     name: "Education"
     items:
         - 
-            title: "PhD, Computer Sciences, Human Computer Interaction"
+            title: "PhD, Computer Science"
             years: "2017 - 2021"
-            text: "CRIStAL - University of Lille. 59650 Villeneuve-d'Ascq, France.
-                    <br>Loki team, Inria Lille Nord Europe. 59650 Villeneuve-d'Ascq, France."
+            text: "Specialized in Human Computer Interaction (HCI).
+                    <br>University of Lille, France"
+        # -
+        #     title: "Master's Degree, 2nd year (M2), Computer Sciences"
+        #     years: "2016 - 2017"
+        #     text: "Speciality Image Vision Interaction (IVI), 15.49/20, Good Honors
+        #             <br>University of Lille. 59650 Villeneuve-d'Ascq, France"
         - 
-            title: "Master's Degree, 2nd year (M2), Computer Sciences"
-            years: "2016 - 2017"
-            text: "Speciality Image Vision Interaction (IVI), 15.49/20, Good Honors
-                    <br>University of Lille. 59650 Villeneuve-d'Ascq, France"
+            title: "Master's Degree, Computer Science"
+            years: "2015 - 2017"
+            text: "Specialized in Image, Vision and Interaction (IVI), graduated with honors
+                    <br>University of Lille, France"
         - 
-            title: "Master's Degree, 1st year (M1), Computer Sciences"
-            years: "2015 - 2016"
-            text: "16.13/20, ranking 2/139, Exceptional Honors
-                    <br>University of Lille. 59650 Villeneuve-d'Ascq, France"
-        - 
-            title: "Bachelor's Degree, Computer Sciences"
+            title: "Bachelor's Degree, Computer Science"
             years: "2014 - 2015"
             text: "15.14/20, Good Honors
-                    <br>University of Lille. 59650 Villeneuve-d'Ascq, France"
-        - 
-            title: "Technology Degree, Computer Sciences"
-            years: "2012 - 2014"
-            text: "IUT A, University of Lille. 59650 Villeneuve-d'Ascq, France"
-        - 
-            title: "CPGE PCSI"
-            years: "2011 - 2012"
-            text: "Lycée Henri Wallon. 59300 Valenciennes, France."
+                    <br>University of Lille, France"
+        # -
+        #     title: "Technology Degree, Computer Science"
+        #     years: "2012 - 2014"
+        #     text: "IUT A, University of Lille. 59650 Villeneuve-d'Ascq, France"
+        # -
+        #     title: "CPGE PCSI"
+        #     years: "2011 - 2012"
+        #     text: "Lycée Henri Wallon. 59300 Valenciennes, France."
 
 
 ################################# PUBLICATIONS #################################
-publications:
-    name: "Publications"
+research:
+    name: "Research"
     subsections:
         phd:
             name: "Thesis"
             items:
                 -   title: "Études des stratégies et conception d’outils pour la production de supports illustratifs d’interaction"
                     icon: "icon_thesis.png"
-                    conf_short: "defended on 29-01-2021"
-                    conf_long: "École doctorale Sciences pour l'ingénieur, CRIStAL, Université de Lille"
-                    presenter: false
+                    conf_short: ""
+                    conf_long: "Defended on 29-01-2021, Best thesis of 2021 in the french HCI community
+                                    <br>École doctorale Sciences pour l'ingénieur, CRIStAL, Université de Lille"
                     authors: []
                     links:
                         pdf:
@@ -320,9 +320,8 @@ publications:
             items:
                 -   title: "Interaction Illustration Taxonomy: Classification of Styles and Techniques for Visually Representing Interaction Scenarios"
                     icon: "icon_taxonomy.jpg"
-                    conf_short: "CHI'21, Honorable Mention Award"
-                    conf_long: "Proceedings of CHI'21, the 38th Conference on Human Factors in Computing Systems, ACM"
-                    presenter: true
+                    conf_short: "CHI'21"
+                    conf_long: "Honorable Mention Award<br>Proceedings of CHI'21, the 38th Conference on Human Factors in Computing Systems, ACM"
                     authors:
                         - "axel.antoine"
                         - "sylvain.malacria"
@@ -344,7 +343,6 @@ publications:
                     icon: "icon_chromium_asynchronicity.png"
                     conf_short: "UIST'20"
                     conf_long: "Proceedings of UIST'20, the 33rd ACM Symposium on User Interface Software and Technology, ACM"
-                    presenter: true
                     authors: 
                         - "axel.antoine"
                         - "mathieu.nancel"
@@ -364,7 +362,6 @@ publications:
                     icon: "icon_esquisse.png"
                     conf_short: "Interact'19"
                     conf_long: "Proceedings of Interact'19, the 17th IFIP TCI3 Conference on Human-Computer Interaction, Springer"
-                    presenter: false
                     authors: 
                         - "axel.antoine"
                         - "sylvain.malacria"
@@ -384,7 +381,6 @@ publications:
                     icon: "icon_turbomouse.png"
                     conf_short: "CHI'18"
                     conf_long: "Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems, ACM"
-                    presenter: true
                     authors: 
                         - "axel.antoine"
                         - "sylvain.malacria"
@@ -405,7 +401,6 @@ publications:
                     icon: "icon_forceedge.png"
                     conf_short: "CHI'17"
                     conf_long: "Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems, ACM"
-                    presenter: false
                     authors: 
                         - "axel.antoine"
                         - "sylvain.malacria"
@@ -419,8 +414,21 @@ publications:
                             url: "https://www.youtube.com/watch?v=Ym6rPM0-2jc"
    
         national:
-            name: "National Conferences"
-            items: []
+            name: "French Conferences"
+            items:
+                -
+                    title: "Étude de l'influence de la taille des sphères virtuelles de contrôle pour les rotations 3D"
+                    icon: "icon_rotation3D.jpg"
+                    conf_short: "IHM'22"
+                    conf_long: "Proceedings of IHM'22, la 33e conférence francophone sur l'Interaction Homme-Machine, ACM"
+                    authors:
+                        - "axel.antoine"
+                        - "sylvain.malacria"
+                        - "dan.vogel"
+                        - "gery.casiez"
+                    links:
+                        doi:
+                            url: "https://dx.doi.org/10.1145/3500866.3516370"
 
         poster_demo:
             name: "Posters and Demonstrations"
@@ -430,7 +438,6 @@ publications:
                     icon: "icon_turbomouse.png"
                     conf_short: "CHI'18"
                     conf_long: "Extended Abstracts of the 2018 CHI Conference on Human Factors in Computing Systems, ACM"
-                    presenter: true
                     authors: 
                         - "axel.antoine"
                         - "sylvain.malacria"
@@ -445,7 +452,6 @@ publications:
                     icon: "icon_forceedge_ihm.png"
                     conf_short: "IHM'16"
                     conf_long: "Actes De La 28Ième Conférence Francophone Sur L'Interaction Homme-Machine, 264--270, ACM"
-                    presenter: true
                     authors: 
                         - "axel.antoine"
                         - "sylvain.malacria"
@@ -480,6 +486,9 @@ people:
     nicolai.marquardt:
         name: "Nicolai Marquardt"
         website: "https://uclic.ucl.ac.uk/people/nicolai-marquardt"
+    dan.vogel:
+        name: "Dan Vogel"
+        website: "https://cs.uwaterloo.ca/people-profiles/daniel-vogel"
 
 
 
