@@ -224,7 +224,7 @@ turbomouse:
     year: "2017"
     status: "Master's Degree intern"
     location: "Inria, France"
-    keywords: ["C", C++", "Qt", "Arduino", "R"]
+    keywords: ["C", "C++", "Qt", "Arduino", "R"]
     summary: "
         TurboMouse is a home-made computer mouse whith an embedded high frequency accelerometer.
         Using the accelerometer data and software prediction techniques, we compute in real-time
