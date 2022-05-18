@@ -1,0 +1,193 @@
+html {
+  scroll-behavior: smooth;
+  font-family: Helvetica;
+  font-size: 10pt;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color:  #404BB8;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+summary {
+  outline:none;
+}
+
+#navigation-bar {
+  width: 100%;
+  background-color: #404BB8;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation-item {
+  margin: 0 0.2em 0 0.2em;
+  padding: 0.2em 1em 0.2em 1em;
+  border-radius: 10px;
+  background-color: #404040;
+  text-decoration: none;
+  color: white;
+  border: #404040 1px solid;
+}
+
+.navigation-item:hover {
+  /*background-color: #505050;*/
+  text-decoration: none;
+  color: white;
+  border: white 1px solid;
+}
+
+.navigation-item .active {
+  /*background-color: lightgray;*/
+}
+
+#content {
+  height: calc(100vh - 3em);
+  overflow-y: auto;
+}
+
+.container, .container-md {
+  max-width: 1140px;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.text {
+  text-align: justify;
+}
+
+.section-title {
+  padding-top: 1em;
+  font-weight:  bold;
+  font-size: 160%;
+  color:  #404BB8;
+}
+
+.subsection-title {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-size: 130%;
+  color:  #404BB8;
+}
+
+.item {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.item-title {
+  font-weight: bold;
+}
+
+.aboutme .name {
+  font-weight: bold;
+  font-size: 140%;
+}
+
+.aboutme .catchphrase {
+  color: #404BB8;
+  font-weight: bold;
+  font-size: 110%;
+
+}
+
+.aboutme .text {
+  padding-top: 0.5em;
+}
+
+.aboutme .links {
+  padding: 0.5em;
+}
+
+.fa-icon {
+  font-size: 110%;
+}
+
+.link {
+  color:  gray;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.link:hover {
+  color: #404BB8;
+  text-decoration: none;
+}
+
+.nodisplay {
+  display:  none! important;
+}
+
+.location-date {
+  font-style: italic;
+  color: gray;
+}
+
+.conf-badge {
+  font-size: smaller;
+  border-radius: 5px;
+  background-color: #404BB8;
+  color: white;
+  margin-bottom: 0.1em;
+  text-align: center;
+  font-weight: 450;
+}
+
+.project-card .card-header {
+  text-align:  center;
+  background-color: #404BB8;
+  color: white;
+  padding: 0;
+  font-weight: 450;
+}
+
+.project-card .subtitle {
+  color:  #404BB8;
+  text-align: right;
+  font-weight: 450;
+  margin-bottom: 0.5em;
+}
+
+.project-card .keywords {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.project-card .publication {
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+.project-card .links {
+  margin-top: 0.5em;
+}
+
+.keyword {
+  border:  solid 1px;
+  border-radius: 5px;
+  color: gray;
+  white-space: nowrap;
+  margin: 0 0.1em 0 0.1em;
+  padding: 0 0.1em 0 0.1em;
+}
+
+
+
+
+
+
+
+

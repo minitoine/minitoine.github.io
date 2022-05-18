@@ -1,47 +1,214 @@
-<!DOCTYPE HTML>
+<!doctype html>
+<head>
+    <title>Axel Antoine</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="assets/fontawesome/css/all.css" rel="stylesheet">
+    <link href="assets/bootstrap5.0.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
 
-<html>
-    <head>
-        <title>Axel Antoine</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="assets/css/mymain.css" />
-    </head>
-    <body>
+<body>
 
-        <!-- Nav -->
-        <nav id="nav">
-            <ul class="container">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#research">Research</a></li>
-            </ul>
-        </nav>
+<div id="navigation-bar">
+    <a class="navigation-item active" href="#home" onclick="onNavClick(this)">Home</a>
+    <a class="navigation-item active" href="#projects" onclick="onNavClick(this)">Projects</a>
+    <a class="navigation-item active" href="#research" onclick="onNavClick(this)">Research</a>
+</div>
 
-        <!-- Page -->
-        <div class="wrapper style1 first" id="home"></div>
-        <div class="wrapper style2" id="projects"></div>
-        <div class="wrapper style2" id="experience"></div>
-        <div class="wrapper style2" id="education"></div>
-        <div class="wrapper style2" id="research"></div>
-
-        <!-- Footer -->
-        <div class="wrapper style4">
-            <footer>
-                Design: <a href="http://html5up.net">HTML5 UP</a>
-            </footer>
+<div id="content">
+    <div id="home">
+    <div class="container">
+        <div id="aboutme" class="section"></div>
+        <div class="row">
+            <div id="positions" class="col-6 col-md-6"></div>
+            <div id="education" class="col-6 col-md-6"></div>
         </div>
+        <div id="projects"></div>
+        <div id="research"></div>
+    </div>
+</div>
 
-        <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery.scrolly.min.js"></script>
-        <script src="assets/js/skel.min.js"></script>
-        <script src="assets/js/skel-viewport.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-        <script src="assets/js/main.js"></script>
-    </body>
+<script src="assets/bootstrap5.0.2/js/bootstrap.bundle.min.js"></script>
+<script src="assets/masonry.pkgd.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+
 </html>
+
+<template>
+
+    <div id="section-template">
+        <div class="section">
+            <div class="section-title">{title}</div>
+            <div class="row section-content">
+                {content}
+            </div>
+        </div>
+    </div>
+
+    <div id="subsection-template">
+        <div class="subsection">
+            <div class="subsection-title">{title}</div>
+            <div class="row subsection-content masonry-grid">
+                {content}
+            </div>
+        </div>
+    </div>
+
+    <div id="publication-item-template">
+        <div class="publication-item item">
+
+            <div class="row">
+                <div class="col-2 col-lg-1">
+                    <div class="conf-badge">{conf_short}</div>
+                    <image src="images/{image}"/>
+                </div>
+                <div class="col-10 col-lg-11 publication-content">
+                    <div class="title item-title">
+                        {title}
+                    </div>
+                    <div class="authors">
+                        {authors}
+                    </div>
+                    <div class="conf-info">
+                        {conference_info}
+                    </div>
+
+                    <div class="links">
+                        {links}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="education-item-template">
+        <div class="col-12 education-item item">
+            <div class="item-title">
+                {diploma}
+            </div>
+            <div class="row location-date">
+                <div class="col-auto mr-auto">{location}</div>
+                <div class="col-auto">{date}</div>
+            </div>
+            <div class="text">
+                {text}
+            </div>
+        </div>
+    </div>
+
+    <div id="position-item-template">
+        <div class="col-12 position-item item">
+            <div class="item-title">
+                {location}
+            </div>
+            <div class="row location-date">
+                <span class="col-auto mr-auto">{position}</span>
+                <span class="col-auto">{date}</span>
+            </div>
+            <div class="text">
+               {team}
+            </div>
+        </div>
+    </div>
+
+    <div id="aboutme-template">
+        <div class="row aboutme">
+            <div class="col-2 col-lg-1">
+                <image src="images/{image}"/>
+            </div>
+            <div class="col">
+                <div class="name">{name}</div>
+                <div class="catchphrase">{catchphrase}</div>
+                <div class="text">{text}</div>
+                <div class="links">{links}</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project-item-template">
+        <div class="col-6 col-lg-4 item">
+            <div class="card project-card">
+                <div class ="card-header">
+                    <!-- <div class="project-title"> -->
+                    {title}
+                </div>
+                <div class="card-body">
+                    <div class="row text-content">
+                        <div class="col-4 col-md-3">
+                            <image src="images/{image}"/>
+                        </div>
+                        <div class="col">
+                            <div class="subtitle">
+                                {subtitle}
+                                <div class="links">
+                                    {project_links}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 text">
+                        {summary}
+                    </div>
+
+                    <div class="keywords">
+                        {keywords}
+                    </div>
+
+                    <details class="details {detailsclass}">
+                        <summary >Research Paper</summary>
+
+                        <div class="publication">
+                            {publication}
+                        </div>
+
+                        <div class="links">
+                            {paper_links}
+                        </div>
+
+                    </details>
+                </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div id="keyword-template">
+        <span class="keyword">
+            {label}
+        </span>
+    </div>
+
+    <div id="text-item-template">
+        <div class="text-item">
+            <div class="item-title">
+                {title}
+            </div>
+            <p class="text">
+                {text}
+            </p>
+        </div>
+    </div>
+
+    <div id="link-template">
+        <a class="link" href="{url}">
+            <i class="fa-icon {fa_class}"></i>
+            <span class="label">{name}</span>
+        </a>
+    </div>
+
+
+</template>
+
+
+
+
+
+
+
+
+
+

@@ -2,191 +2,190 @@ import os
 import yaml
 from bs4 import BeautifulSoup
 
-link_types_order = ['doi', 'pdf', 'video', 'presentation', 'github', 'code',
+data = None
+
+link_types_order = ['doi', 'pdf', 'video', 'presentation', 'github', 'code', 'demo',
     'linkedin','facebook','mail', 'resume']
 
-def icon_for_link_type(link_type):
-    if link_type == 'doi':
-        return 'fas fa-link'
-    elif link_type == 'pdf':
-        return 'fas fa-file-pdf'
-    elif link_type == 'video':
-        return 'fab fa-youtube'
-    elif link_type == 'github':
-        return 'fab fa-github'
-    elif link_type == 'presentation':
-        return 'fab fa-slideshare'
-    elif link_type == 'code':
-        return 'fas fa-download'
-    elif link_type == 'mail':
-        return 'fas fa-envelope-square'
-    elif link_type == 'linkedin':
-        return 'fab fa-linkedin'
-    elif link_type == 'facebook':
-        return 'fab fa-facebook-square'
-    elif link_type == 'resume':
-        return 'fas fa-portrait'
-    elif link_type == 'defense':
-        return 'fab fa-slideshare'
+def get_links_html(links, filter_links=link_types_order):
 
-def get_links_html(links):
-    html = '<ul class="social">'
+    template = get_template('link-template')
+
+    html = ""
+
+    linkMap = {}
+
+    for link in links:
+        if link['type'] in filter_links:
+            linkMap[link['type']] = link;
+
     for link_type in link_types_order:
-        if link_type in links:
-            link = links[link_type]
-            url = link.get('url', '#')
-            name = link.get('name', link_type)
-            html += '''
-            <li>
-                <a href="{url}">
-                    <i class="{fontawesome_icon}"></i>
-                    <span class="label">{name}</span>
-                </a>
-            </li>'''.format(
-                url = url,
-                fontawesome_icon = icon_for_link_type(link_type),
-                name = name)
-    html += "</ul>"
+        if link_type in linkMap:
+
+            link = linkMap[link_type]
+
+            html += template.format(
+                url = link.get('url', ''),
+                fa_class = data['link_classes'][link_type],
+                name = link.get('name', link_type)
+            )
     return html
 
-def get_authors_list_html(data, authors):
-    html = ''
-    cpt = 0
+def get_authors_item_html(authors):
+    htmls = []
     for p_author in authors:
         author = data.get("people").get(p_author)
-        if 'website' in author:
-            html += '<a href="{website}">{name}</a>'.format(
-                website=author.get("website"), name= author.get("name"))
-        else:
-            html += author.get('name')
-        cpt += 1
-        if cpt < len(authors):
-            html += ', '
+        website = author.get("website", "")
+        href = ""
+        if not website == "":
+            href = "href=\"{website}\"".format(website=website)
+        htmls.append('<a {href}>{name}</a>'.format(href=href, name= author["name"]))
+    html = ', '.join(htmls)
     return html
 
-def get_project_item_html(data, project):
-    return '''
-    <div class="row myrow" id="article_item">
-        <img class="1u mycol" alt="" src="images/{icon}"/>
-        <div class="11u mycol colAfterImage">
-            <div class="row myrow">
-                <div class="10u mycol">
-                    <b>{title}</b>
-                </div>
-                <div class="2u mycol">
-                    <i>{year}</i>
-                </div>
-            </div>
-            <div>
-                <i>{status}, {location}</i>
-            </div>
-            <div style="text-align: justify; text-justify: inter-word;">
-                {text} <i>[{technologies}]<i>
-            </div>
-            <div>
-                {links}
-            </div>
-        </div>
-    </div>'''.format(
-        icon = project["icon"],
-        title = project["title"],
-        year = project["year"],
-        duration = project["duration"],
-        status = project["status"],
-        location = project["location"],
-        text = project["text"],
-        technologies = project["technologies"],
-        links = get_links_html(project["links"]))
+def get_keywords_html(keywords):
 
-def get_research_item_html(data, publication):
-    return '''
-    <div class="row myrow" id="article_item">
-        <img class="1u mycol" alt="" src="images/{icon}"/>
-        <div class="11u mycol colAfterImage">
-            <div>
-                <b>{title}</b>
-            </div>
-            <div>
-                <i>{authors}</i>
-            </div>
-            <div style="text-align: justify; text-justify: inter-word;">
-                {conference}
-            </div>  
-            <div>
-                {links}
-            </div>
-        </div>
-    </div>'''.format(
-        icon = publication["icon"],
-        title = publication["title"],
-        conf_short = publication["conf_short"],
-        authors = get_authors_list_html(data, publication.get("authors")),
-        conference = publication["conf_long"],
-        links = get_links_html(publication["links"]))
+    template = get_template("keyword-template")
+    html = "";
 
-def get_infos_html(infos):
-    return '''
-    <div class="container">
-        <div class="row myrow">
-            <image class="2u mycol" alt="" src="images/{image}" style="border-radius: 50%;"/>
-            <div class="10u mycol">
-                <h3> {name} </h3>
-                <p style="text-align: justify; text-justify: inter-word;">
-                    {text}
-                </p>
-               {links} 
-            </div>
-        </div>
-    </div>
-    '''.format(
-        image = infos["image"],
-        name = infos["name"],
-        text = infos["text"],
-        links = get_links_html(infos["links"])
-    )
+    for keyword in keywords:
+        html += template.format(
+            label = keyword
+        )
+    return html
 
-def get_text_item_html(data, item):
-    html = '''
-    <div class="row myrow" id="article_item">
-        <div class="2u mycol" id="article_year">
-            {years}
-            <br>
-            <i>{extra_infos}</i>
-        </div>  
-        <div class="10u mycol">
-            <div><b>{title}</b></div>
-            <div>{text}</div>
-        </div>
-    </div>'''.format(
-        title = item.get("title", ""),
-        years = item.get("years", ""),
-        extra_infos = item.get("extra_infos", ""),
-        text = item.get("text", "")
+
+def get_project_item_html(project):
+
+    project_data = data[project]
+
+    links = project_data["links"]
+    code_links_type = ['github', 'code', 'demo', 'video']
+    code_links = [link for link in links if link['type'] in code_links_type]
+    publi_links = [link for link in links if link['type'] not in code_links_type]
+
+
+    detailsclass = "nodisplay"
+    if len(publi_links) > 0 or project_data.get("paper_title"):
+        detailsclass = ""
+
+    subtitle = project_data.get("year", "")
+    location = project_data.get("location", "")
+    if not location == "":
+        subtitle += ', '+location
+
+
+    links_html = get_links_html(publi_links)
+    code_links_html = get_links_html(code_links)
+
+    template = get_template('project-item-template')
+    html = template.format(
+        image = project_data["icon"],
+        title = project_data["title"],
+        location = project_data["location"],
+        status = project_data["status"],
+        detailsclass = detailsclass,
+        publication = project_data.get("paper_title", ""),
+        conf_short = project_data.get("conf_short", ""),
+        subtitle = subtitle,
+        summary = project_data["summary"],
+        paper_links = links_html,
+        project_links = code_links_html,
+        keywords = get_keywords_html(project_data["keywords"])
     )
     return html
 
-def get_section_html(data, section_data, item_func):
+
+def get_position_item_html(position_data):
+    template = get_template('position-item-template')
+    html = template.format(
+        position = position_data["position"],
+        date = position_data["date"],
+        location = position_data["location"],
+        team = position_data["team"],
+
+    )
+    return html
+
+
+def get_aboutme_item_html(aboutme_data):
+    template = get_template('aboutme-template')
+    html = template.format(
+        image = aboutme_data["image"],
+        catchphrase = aboutme_data["catchphrase"],
+        name = aboutme_data["name"],
+        text = aboutme_data["text"],
+        links = get_links_html(aboutme_data["links"])
+    )
+    return html
+
+
+def get_publication_item_html(publication):
+
+    publication_data = data[publication]
+
+    template = get_template('publication-item-template')
+    html = template.format(
+        image = publication_data["icon"],
+        title = publication_data["paper_title"],
+        conf_short = publication_data["conf_short"],
+        authors = get_authors_item_html(publication_data.get("authors")),
+        conference_info = publication_data["conf_long"],
+        links = get_links_html(publication_data["links"]),
+    )
+    return html
+
+def get_education_item_html(item_data):
+
+    template = get_template('education-item-template')
+    html = template.format(
+        diploma = item_data["diploma"],
+        location = item_data["location"],
+        date = item_data["date"],
+        text = item_data["text"],
+    )
+    return html
+
+def get_template(id):
+    template = soup.find(id=id)
+    return str(template.div or template.a or template.span)
+
+def get_items_html(items, item_func, sort_func=None):
+
+    if sort_func:
+        sort_func(items)
+
+    html = ""
+    for item in items:
+        html += item_func(item)
+    return html
+
+
+def get_subsection_html(subsection_data, item_func, sort_func=None):
+
+    items = subsection_data.get("items", [])
+    content = get_items_html(items, item_func, sort_func)
+
+    template = get_template("subsection-template")
+    html = template.format(
+        title = subsection_data.get("name"),
+        content = content
+    )
+    return html
+
+def get_section_html(section_data, item_func, sort_func=None):
 
     content = ''
-    if "subsections" in section_data:
-        for subsection, sub_data in section_data.get("subsections").items():
-            content += '<h4>%s</h4>'%sub_data.get("name")
-            items = sub_data.get("items", [])
-            for item in items:
-                content += item_func(data, item)
+    if section_data.get("subsections"):
+        for subsection_data in section_data.get("subsections"):
+            content += get_subsection_html(subsection_data, item_func, sort_func)
     else:
-        items = section_data.get("items")
-        for item in items:
-            content += item_func(data, item)        
+        items = section_data.get("items", [])
+        content += get_items_html(items, item_func, sort_func)
 
-    html = '''
-    <article>
-        <div class="container">
-            <h3>{title}</h3>
-            {content}
-        </div>
-    </article>
-    '''.format(
+
+    template = get_template("section-template")
+    html = template.format(
         title = section_data.get("name"),
         content = content
     )
@@ -202,31 +201,36 @@ if __name__ == '__main__':
     soup = BeautifulSoup(f.read(), 'html.parser')
     f.close()
 
-    div = soup.find(id='home')
-    div.append(BeautifulSoup(get_infos_html(data["infos"]), 'html.parser'))
+    print("Generating AboutMe section...")
+    section = soup.find(id='aboutme')
+    html = get_aboutme_item_html(data['aboutme'])
+    section.append(BeautifulSoup(html, 'html.parser'))
+
+    def sortProjectsFunc(items):
+        print(items)
+        items.sort(key=lambda x: data.get(x).get('year'), reverse=True)
 
     print("Generating Projects section...")
-    projects = soup.find(id='projects')
-    projects.append(BeautifulSoup(get_section_html(
-        data, data['projects'], get_project_item_html), 'html.parser'))
-
-    print("Generating Research section...")
-    projects = soup.find(id='research')
-    projects.append(BeautifulSoup(get_section_html(
-        data, data['research'], get_research_item_html), 'html.parser'))
+    section = soup.find(id='projects')
+    html = get_section_html(data['projects'], get_project_item_html, sortProjectsFunc)
+    section.append(BeautifulSoup(html, 'html.parser'))
 
     print("Generating Education section...")
-    projects = soup.find(id='education')
-    projects.append(BeautifulSoup(get_section_html(
-        data, data['education'], get_text_item_html), 'html.parser'))
+    section = soup.find(id='education')
+    html = get_section_html(data['education'], get_education_item_html)
+    section.append(BeautifulSoup(html, 'html.parser'))
 
-    print('Generating Experience section...')
-    projects = soup.find(id='experience')
-    projects.append(BeautifulSoup(get_section_html(
-        data, data["experience"], get_text_item_html), "html.parser"))
+    print("Generating Research section...")
+    section = soup.find(id='research')
+    html = get_section_html(data['research'], get_publication_item_html)
+    section.append(BeautifulSoup(html, 'html.parser'))
+
+    print("Generating Positions section...")
+    section = soup.find(id='positions')
+    html = get_section_html(data['positions'], get_position_item_html)
+    section.append(BeautifulSoup(html, 'html.parser'))
 
 
-    
     f = open('index.html', 'w')
     f.write(soup.prettify())
     f.close()

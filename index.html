@@ -1,1445 +1,1564 @@
-<!DOCTYPE HTML>
-<html>
- <head>
-  <title>
-   Axel Antoine
-  </title>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <link href="assets/css/main.css" rel="stylesheet"/>
-  <link href="assets/css/mymain.css" rel="stylesheet"/>
- </head>
- <body>
-  <!-- Nav -->
-  <nav id="nav">
-   <ul class="container">
-    <li>
-     <a href="#home">
-      Home
-     </a>
-    </li>
-    <li>
-     <a href="#projects">
-      Projects
-     </a>
-    </li>
-    <li>
-     <a href="#experience">
-      Experience
-     </a>
-    </li>
-    <li>
-     <a href="#education">
-      Education
-     </a>
-    </li>
-    <li>
-     <a href="#research">
-      Research
-     </a>
-    </li>
-   </ul>
-  </nav>
-  <!-- Page -->
-  <div class="wrapper style1 first" id="home">
+<!DOCTYPE html>
+<head>
+ <title>
+  Axel Antoine
+ </title>
+ <meta charset="utf-8"/>
+ <meta content="width=device-width, initial-scale=1" name="viewport"/>
+ <link href="assets/fontawesome/css/all.css" rel="stylesheet"/>
+ <link href="assets/bootstrap5.0.2/css/bootstrap.min.css" rel="stylesheet"/>
+ <link href="main.css" rel="stylesheet"/>
+</head>
+<body>
+ <div id="navigation-bar">
+  <a class="navigation-item active" href="#home" onclick="onNavClick(this)">
+   Home
+  </a>
+  <a class="navigation-item active" href="#projects" onclick="onNavClick(this)">
+   Projects
+  </a>
+  <a class="navigation-item active" href="#research" onclick="onNavClick(this)">
+   Research
+  </a>
+ </div>
+ <div id="content">
+  <div id="home">
    <div class="container">
-    <div class="row myrow">
-     <image alt="" class="2u mycol" src="images/me.jpg" style="border-radius: 50%;"/>
-     <div class="10u mycol">
-      <h3>
-       Axel Antoine
-      </h3>
-      <p style="text-align: justify; text-justify: inter-word;">
-       I am Research Software Engineer in the Loki team at Inria Lille - Nord Europe in France. Graduated with my PhD, I can adapt to many situations and technologies. I have mostly worked on projects and proofs of concept in the Human Computer Interaction field (HCI) such as: force based techniques to control autoscroll speed on iOS devices and desktop computers, latency compensation techniques on desktop computers using a hardware customized mouse and on mobile devices through software compensation techniques within Chromium and 3D staging techniques to ease the production of vector-based illustrations in Blender.
-      </p>
-      <ul class="social">
-       <li>
-        <a href="https://www.linkedin.com/in/axel-antoine-318b07105">
-         <i class="fab fa-linkedin">
+    <div class="section" id="aboutme">
+     <div class="row aboutme">
+      <div class="col-2 col-lg-1">
+       <image src="images/me.jpg"/>
+      </div>
+      <div class="col">
+       <div class="name">
+        Axel Antoine
+       </div>
+       <div class="catchphrase">
+        Software Engineer
+       </div>
+       <div class="text">
+        I am a Research Software Engineer at Inria, France. I have a PhD in Computer Science specialized in Human Computer Interaction (HCI). I am interested both in the interaction techniques that facilitate the manipulation of 3D objects and the computer graphics algorithms used to render them.
+       </div>
+       <div class="links">
+        <a class="link" href="https://github.com/minitoine">
+         <i class="fa-icon fa-brands fa-github-square">
+         </i>
+         <span class="label">
+          github
+         </span>
+        </a>
+        <a class="link" href="https://www.linkedin.com/in/axel-antoine-318b07105">
+         <i class="fa-icon fa-brands fa-linkedin">
          </i>
          <span class="label">
           linkedin
          </span>
         </a>
-       </li>
-       <li>
-        <a href="https://www.facebook.com/Axel.Antoine">
-         <i class="fab fa-facebook-square">
+        <a class="link" href="https://www.facebook.com/Axel.Antoine">
+         <i class="fa-icon fa-brands fa-facebook-square">
          </i>
          <span class="label">
           facebook
          </span>
         </a>
-       </li>
-       <li>
-        <a href="mailto:ax.antoine@gmail.com">
-         <i class="fas fa-envelope-square">
+        <a class="link" href="mailto:ax.antoine@gmail.com">
+         <i class="fa-icon fa-solid fa-square-envelope">
          </i>
          <span class="label">
           mail
          </span>
         </a>
-       </li>
-       <li>
-        <a href="./Axel-Antoine-Resume.pdf">
-         <i class="fas fa-portrait">
+        <a class="link" href="./documents/Axel-Antoine-Resume.pdf">
+         <i class="fa-icon fa-solid fa-image-portrait">
          </i>
          <span class="label">
           resume
          </span>
         </a>
-       </li>
-      </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="row">
+     <div class="col-6 col-md-6" id="positions">
+      <div class="section">
+       <div class="section-title">
+        Positions
+       </div>
+       <div class="row section-content">
+        <div class="col-12 position-item item">
+         <div class="item-title">
+          Inria, France
+         </div>
+         <div class="row location-date">
+          <span class="col-auto mr-auto">
+           Research Software Engineer
+          </span>
+          <span class="col-auto">
+           Jan. 2021 - Ongoing
+          </span>
+         </div>
+         <div class="text">
+          Loki team
+         </div>
+        </div>
+        <div class="col-12 position-item item">
+         <div class="item-title">
+          Google, Canada
+         </div>
+         <div class="row location-date">
+          <span class="col-auto mr-auto">
+           Software Engineer Intern
+          </span>
+          <span class="col-auto">
+           May 2019 - Sep. 2019
+          </span>
+         </div>
+         <div class="text">
+          Chromium, Input Dev team
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-6 col-md-6" id="education">
+      <div class="section">
+       <div class="section-title">
+        Education
+       </div>
+       <div class="row section-content">
+        <div class="col-12 education-item item">
+         <div class="item-title">
+          PhD, Computer Science
+         </div>
+         <div class="row location-date">
+          <div class="col-auto mr-auto">
+           University of Lille, France
+          </div>
+          <div class="col-auto">
+           2017 - 2021
+          </div>
+         </div>
+         <div class="text">
+          Specialized in Human Computer Interaction
+         </div>
+        </div>
+        <div class="col-12 education-item item">
+         <div class="item-title">
+          Master's Degree, Computer Science
+         </div>
+         <div class="row location-date">
+          <div class="col-auto mr-auto">
+           University of Lille, France
+          </div>
+          <div class="col-auto">
+           2015 - 2017
+          </div>
+         </div>
+         <div class="text">
+          Specialized in Human Computer Interaction
+         </div>
+        </div>
+        <div class="col-12 education-item item">
+         <div class="item-title">
+          Bachelor's Degree, Computer Science
+         </div>
+         <div class="row location-date">
+          <div class="col-auto mr-auto">
+           University of Lille, France
+          </div>
+          <div class="col-auto">
+           2014 - 2015
+          </div>
+         </div>
+         <div class="text">
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="projects">
+     <div class="section">
+      <div class="section-title">
+       Projects
+      </div>
+      <div class="row section-content">
+       <div class="subsection">
+        <div class="subsection-title">
+         Academic projects
+        </div>
+        <div class="row subsection-content masonry-grid">
+         <div class="col-6 col-lg-4 item">
+          <div class="card project-card">
+           <div class="card-header">
+            <!-- <div class="project-title"> -->
+            Esquisse Web
+           </div>
+           <div class="card-body">
+            <div class="row text-content">
+             <div class="col-4 col-md-3">
+              <image src="images/esquisse++.png"/>
+             </div>
+             <div class="col">
+              <div class="subtitle">
+               2021, Inria, France
+               <div class="links">
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="col-12 text">
+             Esquisse is a web application used to create 3D scenes and export them as Vector Graphics images. Esquisse proposes interaction techniques to manipulate 3D objects and skeletons and embeds a custom NPR Render engine built upon state-of-the-art techniques.
+            </div>
+            <div class="keywords">
+             <span class="keyword">
+              Typescript
+             </span>
+             <span class="keyword">
+              Three.js
+             </span>
+             <span class="keyword">
+              React
+             </span>
+             <span class="keyword">
+              WebAssembly
+             </span>
+             <span class="keyword">
+              NPR Rendering
+             </span>
+             <span class="keyword">
+              Vector Graphics
+             </span>
+            </div>
+            <details class="details nodisplay">
+             <summary>
+              Research Paper
+             </summary>
+             <div class="publication">
+             </div>
+             <div class="links">
+             </div>
+            </details>
+           </div>
+           <!-- </div> -->
+          </div>
+         </div>
+         <div class="col-6 col-lg-4 item">
+          <div class="card project-card">
+           <div class="card-header">
+            <!-- <div class="project-title"> -->
+            Interaction Illustration Taxonomy
+           </div>
+           <div class="card-body">
+            <div class="row text-content">
+             <div class="col-4 col-md-3">
+              <image src="images/taxonomy.jpg"/>
+             </div>
+             <div class="col">
+              <div class="subtitle">
+               2020, University of Lille, France
+               <div class="links">
+                <a class="link" href="https://www.youtube.com/watch?v=tYBU9S6TsI8">
+                 <i class="fa-icon fa-brands fa-youtube-square">
+                 </i>
+                 <span class="label">
+                  video
+                 </span>
+                </a>
+                <a class="link" href="https://github.com/LokiResearch/IllustrationTaxonomy">
+                 <i class="fa-icon fa-brands fa-github-square">
+                 </i>
+                 <span class="label">
+                  github
+                 </span>
+                </a>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="col-12 text">
+             This project proposes a new taxonomy of figures representing interaction scenarios and provides a concise synthesis of visual strategies used to create them. We also provide three online open-source softwares facilitating the exploration of the created dataset, available on github.
+            </div>
+            <div class="keywords">
+             <span class="keyword">
+              Python
+             </span>
+             <span class="keyword">
+              Qt
+             </span>
+             <span class="keyword">
+              Javascript
+             </span>
+             <span class="keyword">
+              Data Visualisation
+             </span>
+             <span class="keyword">
+              D3"
+             </span>
+             <span class="keyword">
+              Bootstrap
+             </span>
+             <span class="keyword">
+              R
+             </span>
+            </div>
+            <details class="details">
+             <summary>
+              Research Paper
+             </summary>
+             <div class="publication">
+              Interaction Illustration Taxonomy: Classification of Styles and Techniques for Visually Representing Interaction Scenarios
+             </div>
+             <div class="links">
+              <a class="link" href="https://dx.doi.org/10.1145/3411764.3445586">
+               <i class="fa-icon fa-solid fa-link">
+               </i>
+               <span class="label">
+                doi
+               </span>
+              </a>
+              <a class="link" href="https://hal.archives-ouvertes.fr/hal-03137867">
+               <i class="fa-icon fa-solid fa-file-pdf">
+               </i>
+               <span class="label">
+                pdf
+               </span>
+              </a>
+              <a class="link" href="https://www.youtube.com/watch?v=XxTyd5L77sY">
+               <i class="fa-icon fa-solid fa-person-chalkboard">
+               </i>
+               <span class="label">
+                presentation
+               </span>
+              </a>
+             </div>
+            </details>
+           </div>
+           <!-- </div> -->
+          </div>
+         </div>
+         <div class="col-6 col-lg-4 item">
+          <div class="card project-card">
+           <div class="card-header">
+            <!-- <div class="project-title"> -->
+            Rotations 3D
+           </div>
+           <div class="card-body">
+            <div class="row text-content">
+             <div class="col-4 col-md-3">
+              <image src="images/rotation3D.jpg"/>
+             </div>
+             <div class="col">
+              <div class="subtitle">
+               2020, University of Lille
+               <div class="links">
+                <a class="link" href="https://expe.lille.inria.fr/3drotations/?xp=false#">
+                 <i class="fa-icon fa-solid fa-gamepad">
+                 </i>
+                 <span class="label">
+                  demo
+                 </span>
+                </a>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="col-12 text">
+             This project proposes a web application for experimenting various tackball techniques used to rotate 3D objects. We reproduced few state-of-the-art techniques and added plenty of experiment options (e.g. task, size, cursor gain, rotation gain, etc.).
+            </div>
+            <div class="keywords">
+             <span class="keyword">
+              Trackball
+             </span>
+             <span class="keyword">
+              Three.js
+             </span>
+             <span class="keyword">
+              Javascript
+             </span>
+             <span class="keyword">
+              Rotation 3D
+             </span>
+            </div>
+            <details class="details">
+             <summary>
+              Research Paper
+             </summary>
+             <div class="publication">
+              Étude de l'influence de la taille des sphères virtuelles de contrôle pour les rotations 3D
+             </div>
+             <div class="links">
+              <a class="link" href="https://dx.doi.org/10.1145/3500866.3516370">
+               <i class="fa-icon fa-solid fa-link">
+               </i>
+               <span class="label">
+                doi
+               </span>
+              </a>
+             </div>
+            </details>
+           </div>
+           <!-- </div> -->
+          </div>
+         </div>
+         <div class="col-6 col-lg-4 item">
+          <div class="card project-card">
+           <div class="card-header">
+            <!-- <div class="project-title"> -->
+            Spatial Jitter compensation in Chromium
+           </div>
+           <div class="card-body">
+            <div class="row text-content">
+             <div class="col-4 col-md-3">
+              <image src="images/chromium_asynchronicity.png"/>
+             </div>
+             <div class="col">
+              <div class="subtitle">
+               2019, Google, Canada
+               <div class="links">
+                <a class="link" href="https://cristal.univ-lille.fr/~casiez/async">
+                 <i class="fa-icon fa-solid fa-code">
+                 </i>
+                 <span class="label">
+                  code
+                 </span>
+                </a>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="col-12 text">
+             This project proposes a software trajectory prediction technique to overcome a scrolling visual jitter issue in Chromium caused by asynchronous input and output frequencies on the mobile device used. The technique is actually implemented in Chrome for Android.
+            </div>
+            <div class="keywords">
+             <span class="keyword">
+              C++
+             </span>
+             <span class="keyword">
+              Chromium
+             </span>
+             <span class="keyword">
+              Javascript
+             </span>
+             <span class="keyword">
+              R
+             </span>
+            </div>
+            <details class="details">
+             <summary>
+              Research Paper
+             </summary>
+             <div class="publication">
+              Modeling and Reducing Spatial Jitter caused by Asynchronous Input and Output Rates
+             </div>
+             <div class="links">
+              <a class="link" href="https://dx.doi.org/10.1145/3379337.3415833">
+               <i class="fa-icon fa-solid fa-link">
+               </i>
+               <span class="label">
+                doi
+               </span>
+              </a>
+              <a class="link" href="https://hal.inria.fr/hal-02919191/document">
+               <i class="fa-icon fa-solid fa-file-pdf">
+               </i>
+               <span class="label">
+                pdf
+               </span>
+              </a>
+             </div>
+            </details>
+           </div>
+           <!-- </div> -->
+          </div>
+         </div>
+         <div class="col-6 col-lg-4 item">
+          <div class="card project-card">
+           <div class="card-header">
+            <!-- <div class="project-title"> -->
+            Esquisse Blender Addon
+           </div>
+           <div class="card-body">
+            <div class="row text-content">
+             <div class="col-4 col-md-3">
+              <image src="images/esquisse.png"/>
+             </div>
+             <div class="col">
+              <div class="subtitle">
+               2018, University of Lille, France
+               <div class="links">
+                <a class="link" href="https://www.youtube.com/watch?v=X2UdHXrvUg0">
+                 <i class="fa-icon fa-brands fa-youtube-square">
+                 </i>
+                 <span class="label">
+                  video
+                 </span>
+                </a>
+                <a class="link" href="https://github.com/LokiResearch/Esquisse">
+                 <i class="fa-icon fa-brands fa-github-square">
+                 </i>
+                 <span class="label">
+                  github
+                 </span>
+                </a>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="col-12 text">
+             Esquisse is a Blender add-on used to facilitate the production of vector-based illustrations. Esquisse proposes interaction techniques to ease the manipulation of 3D objects and a custom vector graphics NPR render engine.
+            </div>
+            <div class="keywords">
+             <span class="keyword">
+              Blender
+             </span>
+             <span class="keyword">
+              C++
+             </span>
+             <span class="keyword">
+              Python
+             </span>
+             <span class="keyword">
+              3D
+             </span>
+             <span class="keyword">
+              NPR Rendering
+             </span>
+            </div>
+            <details class="details">
+             <summary>
+              Research Paper
+             </summary>
+             <div class="publication">
+              Esquisse: Using 3D Models Staging to Facilitate the Creation of Vector-based Trace Figures
+             </div>
+             <div class="links">
+              <a class="link" href="https://doi.org/10.1007/978-3-030-29384-0_30">
+               <i class="fa-icon fa-solid fa-link">
+               </i>
+               <span class="label">
+                doi
+               </span>
+              </a>
+              <a class="link" href="https://hal.inria.fr/hal-02293837/document">
+               <i class="fa-icon fa-solid fa-file-pdf">
+               </i>
+               <span class="label">
+                pdf
+               </span>
+              </a>
+             </div>
+            </details>
+           </div>
+           <!-- </div> -->
+          </div>
+         </div>
+         <div class="col-6 col-lg-4 item">
+          <div class="card project-card">
+           <div class="card-header">
+            <!-- <div class="project-title"> -->
+            TurboMouse
+           </div>
+           <div class="card-body">
+            <div class="row text-content">
+             <div class="col-4 col-md-3">
+              <image src="images/turbomouse.png"/>
+             </div>
+             <div class="col">
+              <div class="subtitle">
+               2017, Inria, France
+               <div class="links">
+                <a class="link" href="https://www.youtube.com/watch?v=qCIrOjHrvQw">
+                 <i class="fa-icon fa-brands fa-youtube-square">
+                 </i>
+                 <span class="label">
+                  video
+                 </span>
+                </a>
+                <a class="link" href="http://cristal.univ-lille.fr/~casiez/turbomouse/">
+                 <i class="fa-icon fa-solid fa-code">
+                 </i>
+                 <span class="label">
+                  code
+                 </span>
+                </a>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="col-12 text">
+             TurboMouse is a home-made computer mouse whith an embedded high frequency accelerometer. Using the accelerometer data and software prediction techniques, we compute in real-time the next position of the mouse with accuracy and compensate for the system's end-to-end latency.
+            </div>
+            <div class="keywords">
+             <span class="keyword">
+              C
+             </span>
+             <span class="keyword">
+              C++"
+             </span>
+             <span class="keyword">
+              Qt
+             </span>
+             <span class="keyword">
+              Arduino
+             </span>
+             <span class="keyword">
+              R
+             </span>
+            </div>
+            <details class="details">
+             <summary>
+              Research Paper
+             </summary>
+             <div class="publication">
+              Using High Frequency Accelerometer and Mouse to Compensate for End-to-end Latency in Indirect Interaction
+             </div>
+             <div class="links">
+              <a class="link" href="https://doi.org/10.1145/3173574.3174183">
+               <i class="fa-icon fa-solid fa-link">
+               </i>
+               <span class="label">
+                doi
+               </span>
+              </a>
+              <a class="link" href="https://hal.inria.fr/hal-01714204/document">
+               <i class="fa-icon fa-solid fa-file-pdf">
+               </i>
+               <span class="label">
+                pdf
+               </span>
+              </a>
+              <a class="link" href="https://www.youtube.com/watch?v=FAtI41SaqtY">
+               <i class="fa-icon fa-solid fa-person-chalkboard">
+               </i>
+               <span class="label">
+                presentation
+               </span>
+              </a>
+             </div>
+            </details>
+           </div>
+           <!-- </div> -->
+          </div>
+         </div>
+         <div class="col-6 col-lg-4 item">
+          <div class="card project-card">
+           <div class="card-header">
+            <!-- <div class="project-title"> -->
+            HandSketch
+           </div>
+           <div class="card-body">
+            <div class="row text-content">
+             <div class="col-4 col-md-3">
+              <image src="images/handsketch.png"/>
+             </div>
+             <div class="col">
+              <div class="subtitle">
+               2017, Inria, France
+               <div class="links">
+                <a class="link" href="https://www.youtube.com/watch?v=myT7bWZXaDc">
+                 <i class="fa-icon fa-brands fa-youtube-square">
+                 </i>
+                 <span class="label">
+                  video
+                 </span>
+                </a>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="col-12 text">
+             Handsketch is a Blender add-on, premise of the Esquisse project, wich is a tool facilitating the creation of a Vector Graphics illustrations from a Blender 3D scene. Handsketch is built upon Freestyle, the Blender NPR Render Engine embedded in Blender.
+            </div>
+            <div class="keywords">
+             <span class="keyword">
+              Python
+             </span>
+             <span class="keyword">
+              Blender
+             </span>
+             <span class="keyword">
+              NPR Rendering
+             </span>
+             <span class="keyword">
+              Vector Graphics
+             </span>
+            </div>
+            <details class="details nodisplay">
+             <summary>
+              Research Paper
+             </summary>
+             <div class="publication">
+             </div>
+             <div class="links">
+             </div>
+            </details>
+           </div>
+           <!-- </div> -->
+          </div>
+         </div>
+         <div class="col-6 col-lg-4 item">
+          <div class="card project-card">
+           <div class="card-header">
+            <!-- <div class="project-title"> -->
+            ForceEdge
+           </div>
+           <div class="card-body">
+            <div class="row text-content">
+             <div class="col-4 col-md-3">
+              <image src="images/forceedge.png"/>
+             </div>
+             <div class="col">
+              <div class="subtitle">
+               2016, Inria, France
+               <div class="links">
+                <a class="link" href="https://www.youtube.com/watch?v=Ym6rPM0-2jc">
+                 <i class="fa-icon fa-brands fa-youtube-square">
+                 </i>
+                 <span class="label">
+                  video
+                 </span>
+                </a>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="col-12 text">
+             ForceEdge is a new interaction technique to control the autoscroll velocity on both desktop and touch-based force sensitive devices. Instead of waiting at the top or the bottom of the screen with your finger or your mouse cursor to make the view scroll, we simply propose to directly control the scroll velocity by varying the force applied on the surface.
+            </div>
+            <div class="keywords">
+             <span class="keyword">
+              Objective-C
+             </span>
+             <span class="keyword">
+              iOS
+             </span>
+             <span class="keyword">
+              macOS
+             </span>
+             <span class="keyword">
+              R
+             </span>
+            </div>
+            <details class="details">
+             <summary>
+              Research Paper
+             </summary>
+             <div class="publication">
+              ForceEdge: Controlling Autoscroll on Both Desktop and Mobile Computers Using the Force
+             </div>
+             <div class="links">
+              <a class="link" href="https://doi.org/10.1145/3025453.3025605">
+               <i class="fa-icon fa-solid fa-link">
+               </i>
+               <span class="label">
+                doi
+               </span>
+              </a>
+              <a class="link" href="https://hal.inria.fr/hal-01444366/document">
+               <i class="fa-icon fa-solid fa-file-pdf">
+               </i>
+               <span class="label">
+                pdf
+               </span>
+              </a>
+             </div>
+            </details>
+           </div>
+           <!-- </div> -->
+          </div>
+         </div>
+         <div class="col-6 col-lg-4 item">
+          <div class="card project-card">
+           <div class="card-header">
+            <!-- <div class="project-title"> -->
+            Conté
+           </div>
+           <div class="card-body">
+            <div class="row text-content">
+             <div class="col-4 col-md-3">
+              <image src="images/conte.png"/>
+             </div>
+             <div class="col">
+              <div class="subtitle">
+               2014, University of Lille, France
+               <div class="links">
+                <a class="link" href="https://www.youtube.com/watch?v=8JVgSslNVzs">
+                 <i class="fa-icon fa-brands fa-youtube-square">
+                 </i>
+                 <span class="label">
+                  video
+                 </span>
+                </a>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="col-12 text">
+             This project aims to associate different functionnalities to each side of an external pen (e.g. Conté pen) in contact with a touch screen using a resistive sensor.
+            </div>
+            <div class="keywords">
+             <span class="keyword">
+              C++
+             </span>
+             <span class="keyword">
+              Qt Framework
+             </span>
+             <span class="keyword">
+              Tuio
+             </span>
+            </div>
+            <details class="details nodisplay">
+             <summary>
+              Research Paper
+             </summary>
+             <div class="publication">
+             </div>
+             <div class="links">
+             </div>
+            </details>
+           </div>
+           <!-- </div> -->
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="research">
+     <div class="section">
+      <div class="section-title">
+       Research
+      </div>
+      <div class="row section-content">
+       <div class="subsection">
+        <div class="subsection-title">
+         Thesis
+        </div>
+        <div class="row subsection-content masonry-grid">
+         <div class="publication-item item">
+          <div class="row">
+           <div class="col-2 col-lg-1">
+            <div class="conf-badge">
+             Thesis
+            </div>
+            <image src="images/thesis.png"/>
+           </div>
+           <div class="col-10 col-lg-11 publication-content">
+            <div class="title item-title">
+             Études des stratégies et conception d’outils pour la production de supports illustratifs d’interaction
+            </div>
+            <div class="authors">
+            </div>
+            <div class="conf-info">
+             <i class="fa-solid fa-award">
+             </i>
+             Best thesis of 2021 in the french HCI community
+             <br/>
+             Defended on 29/01/2021
+             <br/>
+             École doctorale Sciences pour l'ingénieur, CRIStAL, Université de Lille, France
+            </div>
+            <div class="links">
+             <a class="link" href="https://hal.inria.fr/tel-03366786/">
+              <i class="fa-icon fa-solid fa-file-pdf">
+              </i>
+              <span class="label">
+               pdf [fr]
+              </span>
+             </a>
+             <a class="link" href="https://www.dropbox.com/s/a3dps01fszmbayn/SoutenanceTheseAxelAntoine.mp4">
+              <i class="fa-icon fa-solid fa-person-chalkboard">
+              </i>
+              <span class="label">
+               defense [fr]
+              </span>
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="subsection">
+        <div class="subsection-title">
+         International Conferences
+        </div>
+        <div class="row subsection-content masonry-grid">
+         <div class="publication-item item">
+          <div class="row">
+           <div class="col-2 col-lg-1">
+            <div class="conf-badge">
+             CHI'21
+            </div>
+            <image src="images/taxonomy.jpg"/>
+           </div>
+           <div class="col-10 col-lg-11 publication-content">
+            <div class="title item-title">
+             Interaction Illustration Taxonomy: Classification of Styles and Techniques for Visually Representing Interaction Scenarios
+            </div>
+            <div class="authors">
+             <a href="https://axantoine.com">
+              Axel Antoine
+             </a>
+             ,
+             <a href="http://www.malacria.com">
+              Sylvain Malacria
+             </a>
+             ,
+             <a href="https://uclic.ucl.ac.uk/people/nicolai-marquardt">
+              Nicolai Marquardt
+             </a>
+             ,
+             <a href="https://cristal.univ-lille.fr/~casiez/">
+              Géry Casiez
+             </a>
+            </div>
+            <div class="conf-info">
+             <i class="fa-solid fa-award">
+             </i>
+             Honorable Mention Award
+             <br/>
+             Proceedings of CHI'21, the 38th Conference on Human Factors in Computing Systems, ACM
+            </div>
+            <div class="links">
+             <a class="link" href="https://dx.doi.org/10.1145/3411764.3445586">
+              <i class="fa-icon fa-solid fa-link">
+              </i>
+              <span class="label">
+               doi
+              </span>
+             </a>
+             <a class="link" href="https://hal.archives-ouvertes.fr/hal-03137867">
+              <i class="fa-icon fa-solid fa-file-pdf">
+              </i>
+              <span class="label">
+               pdf
+              </span>
+             </a>
+             <a class="link" href="https://www.youtube.com/watch?v=tYBU9S6TsI8">
+              <i class="fa-icon fa-brands fa-youtube-square">
+              </i>
+              <span class="label">
+               video
+              </span>
+             </a>
+             <a class="link" href="https://www.youtube.com/watch?v=XxTyd5L77sY">
+              <i class="fa-icon fa-solid fa-person-chalkboard">
+              </i>
+              <span class="label">
+               presentation
+              </span>
+             </a>
+             <a class="link" href="https://github.com/LokiResearch/IllustrationTaxonomy">
+              <i class="fa-icon fa-brands fa-github-square">
+              </i>
+              <span class="label">
+               github
+              </span>
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="publication-item item">
+          <div class="row">
+           <div class="col-2 col-lg-1">
+            <div class="conf-badge">
+             UIST'20
+            </div>
+            <image src="images/chromium_asynchronicity.png"/>
+           </div>
+           <div class="col-10 col-lg-11 publication-content">
+            <div class="title item-title">
+             Modeling and Reducing Spatial Jitter caused by Asynchronous Input and Output Rates
+            </div>
+            <div class="authors">
+             <a href="https://axantoine.com">
+              Axel Antoine
+             </a>
+             ,
+             <a href="http://mathieu.nancel.net">
+              Mathieu Nancel
+             </a>
+             ,
+             <a>
+              Ella Ge
+             </a>
+             ,
+             <a href="https://www.jingjiezheng.com">
+              Jingjie Zheng
+             </a>
+             ,
+             <a>
+              Navid Zolghadr
+             </a>
+             ,
+             <a href="https://cristal.univ-lille.fr/~casiez/">
+              Géry Casiez
+             </a>
+            </div>
+            <div class="conf-info">
+             Proceedings of UIST'20, the 33rd ACM Symposium on User Interface Software and Technology, ACM
+            </div>
+            <div class="links">
+             <a class="link" href="https://dx.doi.org/10.1145/3379337.3415833">
+              <i class="fa-icon fa-solid fa-link">
+              </i>
+              <span class="label">
+               doi
+              </span>
+             </a>
+             <a class="link" href="https://hal.inria.fr/hal-02919191/document">
+              <i class="fa-icon fa-solid fa-file-pdf">
+              </i>
+              <span class="label">
+               pdf
+              </span>
+             </a>
+             <a class="link" href="https://cristal.univ-lille.fr/~casiez/async">
+              <i class="fa-icon fa-solid fa-code">
+              </i>
+              <span class="label">
+               code
+              </span>
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="publication-item item">
+          <div class="row">
+           <div class="col-2 col-lg-1">
+            <div class="conf-badge">
+             Interact'19
+            </div>
+            <image src="images/esquisse.png"/>
+           </div>
+           <div class="col-10 col-lg-11 publication-content">
+            <div class="title item-title">
+             Esquisse: Using 3D Models Staging to Facilitate the Creation of Vector-based Trace Figures
+            </div>
+            <div class="authors">
+             <a href="https://axantoine.com">
+              Axel Antoine
+             </a>
+             ,
+             <a href="http://www.malacria.com">
+              Sylvain Malacria
+             </a>
+             ,
+             <a href="https://uclic.ucl.ac.uk/people/nicolai-marquardt">
+              Nicolai Marquardt
+             </a>
+             ,
+             <a href="https://cristal.univ-lille.fr/~casiez/">
+              Géry Casiez
+             </a>
+            </div>
+            <div class="conf-info">
+             Proceedings of Interact'19, the 17th IFIP TCI3 Conference on Human-Computer Interaction, Springer
+            </div>
+            <div class="links">
+             <a class="link" href="https://doi.org/10.1007/978-3-030-29384-0_30">
+              <i class="fa-icon fa-solid fa-link">
+              </i>
+              <span class="label">
+               doi
+              </span>
+             </a>
+             <a class="link" href="https://hal.inria.fr/hal-02293837/document">
+              <i class="fa-icon fa-solid fa-file-pdf">
+              </i>
+              <span class="label">
+               pdf
+              </span>
+             </a>
+             <a class="link" href="https://www.youtube.com/watch?v=X2UdHXrvUg0">
+              <i class="fa-icon fa-brands fa-youtube-square">
+              </i>
+              <span class="label">
+               video
+              </span>
+             </a>
+             <a class="link" href="https://github.com/LokiResearch/Esquisse">
+              <i class="fa-icon fa-brands fa-github-square">
+              </i>
+              <span class="label">
+               github
+              </span>
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="publication-item item">
+          <div class="row">
+           <div class="col-2 col-lg-1">
+            <div class="conf-badge">
+             CHI'18
+            </div>
+            <image src="images/turbomouse.png"/>
+           </div>
+           <div class="col-10 col-lg-11 publication-content">
+            <div class="title item-title">
+             Using High Frequency Accelerometer and Mouse to Compensate for End-to-end Latency in Indirect Interaction
+            </div>
+            <div class="authors">
+             <a href="https://axantoine.com">
+              Axel Antoine
+             </a>
+             ,
+             <a href="http://www.malacria.com">
+              Sylvain Malacria
+             </a>
+             ,
+             <a href="https://cristal.univ-lille.fr/~casiez/">
+              Géry Casiez
+             </a>
+            </div>
+            <div class="conf-info">
+             Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems, ACM
+            </div>
+            <div class="links">
+             <a class="link" href="https://doi.org/10.1145/3173574.3174183">
+              <i class="fa-icon fa-solid fa-link">
+              </i>
+              <span class="label">
+               doi
+              </span>
+             </a>
+             <a class="link" href="https://hal.inria.fr/hal-01714204/document">
+              <i class="fa-icon fa-solid fa-file-pdf">
+              </i>
+              <span class="label">
+               pdf
+              </span>
+             </a>
+             <a class="link" href="https://www.youtube.com/watch?v=qCIrOjHrvQw">
+              <i class="fa-icon fa-brands fa-youtube-square">
+              </i>
+              <span class="label">
+               video
+              </span>
+             </a>
+             <a class="link" href="https://www.youtube.com/watch?v=FAtI41SaqtY">
+              <i class="fa-icon fa-solid fa-person-chalkboard">
+              </i>
+              <span class="label">
+               presentation
+              </span>
+             </a>
+             <a class="link" href="http://cristal.univ-lille.fr/~casiez/turbomouse/">
+              <i class="fa-icon fa-solid fa-code">
+              </i>
+              <span class="label">
+               code
+              </span>
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="publication-item item">
+          <div class="row">
+           <div class="col-2 col-lg-1">
+            <div class="conf-badge">
+             CHI'17
+            </div>
+            <image src="images/forceedge.png"/>
+           </div>
+           <div class="col-10 col-lg-11 publication-content">
+            <div class="title item-title">
+             ForceEdge: Controlling Autoscroll on Both Desktop and Mobile Computers Using the Force
+            </div>
+            <div class="authors">
+             <a href="https://axantoine.com">
+              Axel Antoine
+             </a>
+             ,
+             <a href="http://www.malacria.com">
+              Sylvain Malacria
+             </a>
+             ,
+             <a href="https://cristal.univ-lille.fr/~casiez/">
+              Géry Casiez
+             </a>
+            </div>
+            <div class="conf-info">
+             Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems, ACM
+            </div>
+            <div class="links">
+             <a class="link" href="https://doi.org/10.1145/3025453.3025605">
+              <i class="fa-icon fa-solid fa-link">
+              </i>
+              <span class="label">
+               doi
+              </span>
+             </a>
+             <a class="link" href="https://hal.inria.fr/hal-01444366/document">
+              <i class="fa-icon fa-solid fa-file-pdf">
+              </i>
+              <span class="label">
+               pdf
+              </span>
+             </a>
+             <a class="link" href="https://www.youtube.com/watch?v=Ym6rPM0-2jc">
+              <i class="fa-icon fa-brands fa-youtube-square">
+              </i>
+              <span class="label">
+               video
+              </span>
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="subsection">
+        <div class="subsection-title">
+         French Conferences
+        </div>
+        <div class="row subsection-content masonry-grid">
+         <div class="publication-item item">
+          <div class="row">
+           <div class="col-2 col-lg-1">
+            <div class="conf-badge">
+             IHM'22
+            </div>
+            <image src="images/rotation3D.jpg"/>
+           </div>
+           <div class="col-10 col-lg-11 publication-content">
+            <div class="title item-title">
+             Étude de l'influence de la taille des sphères virtuelles de contrôle pour les rotations 3D
+            </div>
+            <div class="authors">
+             <a href="https://axantoine.com">
+              Axel Antoine
+             </a>
+             ,
+             <a href="http://www.malacria.com">
+              Sylvain Malacria
+             </a>
+             ,
+             <a href="https://cs.uwaterloo.ca/people-profiles/daniel-vogel">
+              Dan Vogel
+             </a>
+             ,
+             <a href="https://cristal.univ-lille.fr/~casiez/">
+              Géry Casiez
+             </a>
+            </div>
+            <div class="conf-info">
+             Proceedings of IHM'22, la 33e conférence francophone sur l'Interaction Homme-Machine, ACM
+            </div>
+            <div class="links">
+             <a class="link" href="https://dx.doi.org/10.1145/3500866.3516370">
+              <i class="fa-icon fa-solid fa-link">
+              </i>
+              <span class="label">
+               doi
+              </span>
+             </a>
+             <a class="link" href="https://expe.lille.inria.fr/3drotations/?xp=false#">
+              <i class="fa-icon fa-solid fa-gamepad">
+              </i>
+              <span class="label">
+               demo
+              </span>
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="subsection">
+        <div class="subsection-title">
+         Posters and Demonstrations
+        </div>
+        <div class="row subsection-content masonry-grid">
+         <div class="publication-item item">
+          <div class="row">
+           <div class="col-2 col-lg-1">
+            <div class="conf-badge">
+             CHI'18
+            </div>
+            <image src="images/turbomouse.png"/>
+           </div>
+           <div class="col-10 col-lg-11 publication-content">
+            <div class="title item-title">
+             TurboMouse: End-to-end Latency Compensation in Indirect Interaction
+            </div>
+            <div class="authors">
+             <a href="https://axantoine.com">
+              Axel Antoine
+             </a>
+             ,
+             <a href="http://www.malacria.com">
+              Sylvain Malacria
+             </a>
+             ,
+             <a href="https://cristal.univ-lille.fr/~casiez/">
+              Géry Casiez
+             </a>
+            </div>
+            <div class="conf-info">
+             Extended Abstracts of the 2018 CHI Conference on Human Factors in Computing Systems, ACM
+            </div>
+            <div class="links">
+             <a class="link" href="https://doi.org/10.1145/3170427.3186542">
+              <i class="fa-icon fa-solid fa-link">
+              </i>
+              <span class="label">
+               doi
+              </span>
+             </a>
+             <a class="link" href="https://hal.inria.fr/hal-01726763/document">
+              <i class="fa-icon fa-solid fa-file-pdf">
+              </i>
+              <span class="label">
+               pdf
+              </span>
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="publication-item item">
+          <div class="row">
+           <div class="col-2 col-lg-1">
+            <div class="conf-badge">
+             IHM'16
+            </div>
+            <image src="images/forceedge_ihm.jpg"/>
+           </div>
+           <div class="col-10 col-lg-11 publication-content">
+            <div class="title item-title">
+             Utilisation de la force sur pavés tactiles pour le défilement automatique
+            </div>
+            <div class="authors">
+             <a href="https://axantoine.com">
+              Axel Antoine
+             </a>
+             ,
+             <a href="http://www.malacria.com">
+              Sylvain Malacria
+             </a>
+             ,
+             <a href="https://cristal.univ-lille.fr/~casiez/">
+              Géry Casiez
+             </a>
+            </div>
+            <div class="conf-info">
+             Actes De La 28Ième Conférence Francophone Sur L'Interaction Homme-Machine, 264--270, ACM
+            </div>
+            <div class="links">
+             <a class="link" href="https://doi.org/10.1145/3004107.3004137">
+              <i class="fa-icon fa-solid fa-link">
+              </i>
+              <span class="label">
+               doi
+              </span>
+             </a>
+             <a class="link" href="https://hal.archives-ouvertes.fr/hal-01384315/document">
+              <i class="fa-icon fa-solid fa-file-pdf">
+              </i>
+              <span class="label">
+               pdf
+              </span>
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
      </div>
     </div>
    </div>
   </div>
-  <div class="wrapper style2" id="projects">
-   <article>
-    <div class="container">
-     <h3>
-      Projects
-     </h3>
-     <h4>
-      Major Projects
-     </h4>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_esquisse++.png"/>
-      <div class="11u mycol colAfterImage">
-       <div class="row myrow">
-        <div class="10u mycol">
-         <b>
-          Esquisse++
-         </b>
-        </div>
-        <div class="2u mycol">
-         <i>
-          2021 - current
-         </i>
-        </div>
-       </div>
-       <div>
-        <i>
-         Research Software Engineer, Loki team, University of Lille, Inria Lille Nord Europe, Villeneuve-d'Ascq, France
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        This project aims to develop a new version of the Blender add-on Esquisse created during my PhD for the web using Typescript and Three.js. This project involves creating a vector-based render engine from scratch.
-        <i>
-         [C++, Typescript, Node.js, Three.js, React, Emscripten]
-         <i>
-         </i>
-        </i>
-       </div>
-       <div>
-        <ul class="social">
-        </ul>
-       </div>
-      </div>
+  <script src="assets/bootstrap5.0.2/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="assets/masonry.pkgd.min.js">
+  </script>
+  <script src="main.js">
+  </script>
+ </div>
+</body>
+<template>
+ <div id="section-template">
+  <div class="section">
+   <div class="section-title">
+    {title}
+   </div>
+   <div class="row section-content">
+    {content}
+   </div>
+  </div>
+ </div>
+ <div id="subsection-template">
+  <div class="subsection">
+   <div class="subsection-title">
+    {title}
+   </div>
+   <div class="row subsection-content masonry-grid">
+    {content}
+   </div>
+  </div>
+ </div>
+ <div id="publication-item-template">
+  <div class="publication-item item">
+   <div class="row">
+    <div class="col-2 col-lg-1">
+     <div class="conf-badge">
+      {conf_short}
      </div>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_taxonomy.jpg"/>
-      <div class="11u mycol colAfterImage">
-       <div class="row myrow">
-        <div class="10u mycol">
-         <b>
-          Interaction Illustration Taxonomy
-         </b>
-        </div>
-        <div class="2u mycol">
-         <i>
-          2020
-         </i>
-        </div>
-       </div>
-       <div>
-        <i>
-         PhD, Loki team, University of Lille, Inria Lille Nord Europe, Villeneuve-d'Ascq, France
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        This project proposes a new taxonomy of figures representing interaction scenarios and provides a concise synthesis of visual strategies used to create them. We also provide three online open-source softwares facilitating the exploration of the created dataset, available on github. See publication for details.
-        <i>
-         [python, javascript, bootstrap, R]
-         <i>
-         </i>
-        </i>
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://dx.doi.org/10.1145/3411764.3445586">
-           <i class="fas fa-link">
-           </i>
-           <span class="label">
-            doi
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://hal.archives-ouvertes.fr/hal-03137867">
-           <i class="fas fa-file-pdf">
-           </i>
-           <span class="label">
-            pdf
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://www.youtube.com/watch?v=tYBU9S6TsI8">
-           <i class="fab fa-youtube">
-           </i>
-           <span class="label">
-            video
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://www.youtube.com/watch?v=XxTyd5L77sY">
-           <i class="fab fa-slideshare">
-           </i>
-           <span class="label">
-            presentation
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://github.com/LokiResearch/IllustrationTaxonomy">
-           <i class="fab fa-github">
-           </i>
-           <span class="label">
-            github
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
+     <image src="images/{image}"/>
+    </div>
+    <div class="col-10 col-lg-11 publication-content">
+     <div class="title item-title">
+      {title}
      </div>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_chromium_asynchronicity.png"/>
-      <div class="11u mycol colAfterImage">
-       <div class="row myrow">
-        <div class="10u mycol">
-         <b>
-          Spatial Jitter compensation in Chromium
-         </b>
-        </div>
-        <div class="2u mycol">
-         <i>
-          2019
-         </i>
-        </div>
-       </div>
-       <div>
-        <i>
-         Software Engineer Intern, Chrome, Input Dev team, Google, Kitchener, ON, Canada
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Design, implementation and evaluation of a spatial jitter technique caused by asynchronous input and output rates experimented on displays with 90Hz and more. The project required to compensate for the jitter in real time for specific devices (e.g. Pixel 4) using input events resampling without impacting performance and precision. The technique is actually implemented and used in Chrome for Android. See publication for details.
-        <i>
-         [C++, R]
-         <i>
-         </i>
-        </i>
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://dx.doi.org/10.1145/3379337.3415833">
-           <i class="fas fa-link">
-           </i>
-           <span class="label">
-            doi
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://hal.inria.fr/hal-02919191/document">
-           <i class="fas fa-file-pdf">
-           </i>
-           <span class="label">
-            pdf
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://cristal.univ-lille.fr/~casiez/async/">
-           <i class="fas fa-download">
-           </i>
-           <span class="label">
-            code
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
+     <div class="authors">
+      {authors}
      </div>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_esquisse.png"/>
-      <div class="11u mycol colAfterImage">
-       <div class="row myrow">
-        <div class="10u mycol">
-         <b>
-          Esquisse
-         </b>
-        </div>
-        <div class="2u mycol">
-         <i>
-          2018
-         </i>
-        </div>
-       </div>
-       <div>
-        <i>
-         PhD, Loki team, University of Lille, Inria Lille Nord Europe, Villeneuve-d'Ascq, France
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Design, implementation and evaluation of 3D staging techniques to facilitate the production of vector-based illustrations. Esquisse is developped as a Blender add-on, proposing 3D interaction techniques to ease the manipulation of 3D objects and embeds an innovative vector-based NPR rendering engine based on state of the art rendering techniques. See publication for details.
-        <i>
-         [Blender, python, C++, CGAL Library, R]
-         <i>
-         </i>
-        </i>
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://doi.org/10.1007/978-3-030-29384-0_30">
-           <i class="fas fa-link">
-           </i>
-           <span class="label">
-            doi
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://hal.inria.fr/hal-02293837/document">
-           <i class="fas fa-file-pdf">
-           </i>
-           <span class="label">
-            pdf
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://www.youtube.com/watch?v=X2UdHXrvUg0">
-           <i class="fab fa-youtube">
-           </i>
-           <span class="label">
-            video
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://www.youtube.com/watch?v=FAtI41SaqtY">
-           <i class="fab fa-slideshare">
-           </i>
-           <span class="label">
-            presentation
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://github.com/LokiResearch/Esquisse">
-           <i class="fab fa-github">
-           </i>
-           <span class="label">
-            github
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
+     <div class="conf-info">
+      {conference_info}
      </div>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_turbomouse.png"/>
-      <div class="11u mycol colAfterImage">
-       <div class="row myrow">
-        <div class="10u mycol">
-         <b>
-          TurboMouse
-         </b>
-        </div>
-        <div class="2u mycol">
-         <i>
-          2017
-         </i>
-        </div>
-       </div>
-       <div>
-        <i>
-         Master's Degree internship, Mjolnir team, Inria Lille Nord Europe, Villeneuve-d'Ascq, France
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Design, implementation and evaluation of a latency compensation technique on desktop computers using a high frequency accelerometer embedded in the mouse. This project required specific optimizations to synchronize multiple input sources streams and compute trajectory predictions in real-time. See publication for details.
-        <i>
-         [C++, Qt Framework, Arduino, R]
-         <i>
-         </i>
-        </i>
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://doi.org/10.1145/3173574.3174183">
-           <i class="fas fa-link">
-           </i>
-           <span class="label">
-            doi
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://hal.inria.fr/hal-01714204/document">
-           <i class="fas fa-file-pdf">
-           </i>
-           <span class="label">
-            pdf
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://www.youtube.com/watch?v=qCIrOjHrvQw">
-           <i class="fab fa-youtube">
-           </i>
-           <span class="label">
-            video
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://www.youtube.com/watch?v=FAtI41SaqtY">
-           <i class="fab fa-slideshare">
-           </i>
-           <span class="label">
-            presentation
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="http://cristal.univ-lille.fr/~casiez/turbomouse/">
-           <i class="fas fa-download">
-           </i>
-           <span class="label">
-            code
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_forceedge.png"/>
-      <div class="11u mycol colAfterImage">
-       <div class="row myrow">
-        <div class="10u mycol">
-         <b>
-          ForceEdge
-         </b>
-        </div>
-        <div class="2u mycol">
-         <i>
-          2016
-         </i>
-        </div>
-       </div>
-       <div>
-        <i>
-         Master's Degree internship, Mjolnir team, Inria Lille Nord Europe, Villeneuve-d’Ascq, France
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Design, implementation and evaluation of autoscroll interaction techniques on both desktop and touch-based force sensitive devices. This project required to design a cross-platform technique deliver the same user experience on both desktop and mobiles force-sensitive input surfaces. See publication for details.
-        <i>
-         [Objective-C, iOS, macOS, R]
-         <i>
-         </i>
-        </i>
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://doi.org/10.1145/3025453.3025605">
-           <i class="fas fa-link">
-           </i>
-           <span class="label">
-            doi
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://hal.inria.fr/hal-01444366/document">
-           <i class="fas fa-file-pdf">
-           </i>
-           <span class="label">
-            pdf
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://www.youtube.com/watch?v=Ym6rPM0-2jc">
-           <i class="fab fa-youtube">
-           </i>
-           <span class="label">
-            video
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
-     <h4>
-      Minor projects
-     </h4>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_handsketch.png"/>
-      <div class="11u mycol colAfterImage">
-       <div class="row myrow">
-        <div class="10u mycol">
-         <b>
-          HandSketch: Vectorial draw creation from 3D scene tool.
-         </b>
-        </div>
-        <div class="2u mycol">
-         <i>
-          2017
-         </i>
-        </div>
-       </div>
-       <div>
-        <i>
-         Master's Degree Project, University of Lille
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Tool allowing the easy creation of a SVG (vectorial) file from a Blender 3D scene. User can choose visual rendering strokes (based on Blender.Freestyle) and add additionnal vectorial information from external files.
-        <i>
-         [python, Blender]
-         <i>
-         </i>
-        </i>
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://www.youtube.com/watch?v=myT7bWZXaDc">
-           <i class="fab fa-youtube">
-           </i>
-           <span class="label">
-            video
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_360.png"/>
-      <div class="11u mycol colAfterImage">
-       <div class="row myrow">
-        <div class="10u mycol">
-         <b>
-          360 Video player
-         </b>
-        </div>
-        <div class="2u mycol">
-         <i>
-          2016
-         </i>
-        </div>
-       </div>
-       <div>
-        <i>
-         Master's Degree Project, University of Lille
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Implementation of a 360 video player in a Web browser using WebGL 2.0.
-        <i>
-         [javascript, WebGL]
-         <i>
-         </i>
-        </i>
-       </div>
-       <div>
-        <ul class="social">
-        </ul>
-       </div>
-      </div>
-     </div>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_navigation.png"/>
-      <div class="11u mycol colAfterImage">
-       <div class="row myrow">
-        <div class="10u mycol">
-         <b>
-          Virtual Reality Navigation Technique
-         </b>
-        </div>
-        <div class="2u mycol">
-         <i>
-          2016
-         </i>
-        </div>
-       </div>
-       <div>
-        <i>
-         Master's Degree Project, University of Lille
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Implementation of a virtual reality navigation technique in Unity3D with Occulus Rift using the iPhone 6S inboard gyroscope for orientation control and the force sensitive touchscreen for speed control.
-        <i>
-         [C#, Unity]
-         <i>
-         </i>
-        </i>
-       </div>
-       <div>
-        <ul class="social">
-        </ul>
-       </div>
-      </div>
-     </div>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_conte.png"/>
-      <div class="11u mycol colAfterImage">
-       <div class="row myrow">
-        <div class="10u mycol">
-         <b>
-          Conté: Multimodal Input Inspired by an Artist's Crayon
-         </b>
-        </div>
-        <div class="2u mycol">
-         <i>
-          2014
-         </i>
-        </div>
-       </div>
-       <div>
-        <i>
-         Technology Degree Project, University of Lille
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        This project aims to associate different functionnalities to each side of an external pen (e.g. Conté pen) in contact with a touch screen using a resistive sensor.
-        <i>
-         [C++, Qt Framework]
-         <i>
-         </i>
-        </i>
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://www.youtube.com/watch?v=8JVgSslNVzs">
-           <i class="fab fa-youtube">
-           </i>
-           <span class="label">
-            video
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
+     <div class="links">
+      {links}
      </div>
     </div>
-   </article>
+   </div>
   </div>
-  <div class="wrapper style2" id="experience">
-   <article>
-    <div class="container">
-     <h3>
-      Experience
-     </h3>
-     <h4>
-      Positions
-     </h4>
-     <div class="row myrow" id="article_item">
-      <div class="2u mycol" id="article_year">
-       2021 - 2023
-       <br/>
-       <i>
-        ends 4th Jan. 2023
-       </i>
-      </div>
-      <div class="10u mycol">
-       <div>
-        <b>
-         Research Software Engineer, Inria
-        </b>
-       </div>
-       <div>
-        Loki team, Inria Lille Nord Europe. 59650 Villeneuve-d'Ascq, France.
-       </div>
-      </div>
-     </div>
-     <div class="row myrow" id="article_item">
-      <div class="2u mycol" id="article_year">
-       2017 - 2021
-       <br/>
-       <i>
-       </i>
-      </div>
-      <div class="10u mycol">
-       <div>
-        <b>
-         PhD Student, Computer Sciences, Human Computer Interaction
-        </b>
-       </div>
-       <div>
-        CRIStAL - University of Lille. 59650 Villeneuve-d'Ascq, France.
-        <br/>
-        Loki team, Inria Lille Nord Europe. 59650 Villeneuve-d'Ascq, France.
-       </div>
-      </div>
-     </div>
-     <div class="row myrow" id="article_item">
-      <div class="2u mycol" id="article_year">
-       2019
-       <br/>
-       <i>
-        14 weeks
-       </i>
-      </div>
-      <div class="10u mycol">
-       <div>
-        <b>
-         Software Engineer Intern, Google
-        </b>
-       </div>
-       <div>
-        Chrome, Input Dev team, Google, Kitchener, ON, Canada
-       </div>
-      </div>
-     </div>
-     <h4>
-      Teachings
-     </h4>
-     <div class="row myrow" id="article_item">
-      <div class="2u mycol" id="article_year">
-       2018 - 2020
-       <br/>
-       <i>
-        64H
-       </i>
-      </div>
-      <div class="10u mycol">
-       <div>
-        <b>
-         PhD Teaching Assistant - Libre Office Calc
-        </b>
-       </div>
-       <div>
-        Introduction to LibreOffice Calc
-        <br/>
-        IUT A, University of Lille, 59650 Villeneuve-d'Ascq, France.
-       </div>
-      </div>
-     </div>
-     <div class="row myrow" id="article_item">
-      <div class="2u mycol" id="article_year">
-       2018 - 2020
-       <br/>
-       <i>
-        64H
-       </i>
-      </div>
-      <div class="10u mycol">
-       <div>
-        <b>
-         PhD Teaching Assistant - HCI
-        </b>
-       </div>
-       <div>
-        Introduction to Human Computer Interaction
-        <br/>
-        IUT A, University of Lille, 59650 Villeneuve-d'Ascq, France.
-       </div>
-      </div>
-     </div>
-     <div class="row myrow" id="article_item">
-      <div class="2u mycol" id="article_year">
-       2015
-       <br/>
-       <i>
-        72H
-       </i>
-      </div>
-      <div class="10u mycol">
-       <div>
-        <b>
-         Support Teaching
-        </b>
-       </div>
-       <div>
-        Helping students having difficulties to understand and practice Oriented Object with Java.
-        <br/>
-        IUT A, University of Lille, 59650 Villeneuve-d'Ascq, France.
-       </div>
-      </div>
-     </div>
+ </div>
+ <div id="education-item-template">
+  <div class="col-12 education-item item">
+   <div class="item-title">
+    {diploma}
+   </div>
+   <div class="row location-date">
+    <div class="col-auto mr-auto">
+     {location}
     </div>
-   </article>
-  </div>
-  <div class="wrapper style2" id="education">
-   <article>
-    <div class="container">
-     <h3>
-      Education
-     </h3>
-     <div class="row myrow" id="article_item">
-      <div class="2u mycol" id="article_year">
-       2017 - 2021
-       <br/>
-       <i>
-       </i>
-      </div>
-      <div class="10u mycol">
-       <div>
-        <b>
-         PhD, Computer Science
-        </b>
-       </div>
-       <div>
-        Specialized in Human Computer Interaction (HCI).
-        <br/>
-        University of Lille, France
-       </div>
-      </div>
-     </div>
-     <div class="row myrow" id="article_item">
-      <div class="2u mycol" id="article_year">
-       2015 - 2017
-       <br/>
-       <i>
-       </i>
-      </div>
-      <div class="10u mycol">
-       <div>
-        <b>
-         Master's Degree, Computer Science
-        </b>
-       </div>
-       <div>
-        Specialized in Image, Vision and Interaction (IVI), graduated with honors
-        <br/>
-        University of Lille, France
-       </div>
-      </div>
-     </div>
-     <div class="row myrow" id="article_item">
-      <div class="2u mycol" id="article_year">
-       2014 - 2015
-       <br/>
-       <i>
-       </i>
-      </div>
-      <div class="10u mycol">
-       <div>
-        <b>
-         Bachelor's Degree, Computer Science
-        </b>
-       </div>
-       <div>
-        15.14/20, Good Honors
-        <br/>
-        University of Lille, France
-       </div>
-      </div>
-     </div>
+    <div class="col-auto">
+     {date}
     </div>
-   </article>
+   </div>
+   <div class="text">
+    {text}
+   </div>
   </div>
-  <div class="wrapper style2" id="research">
-   <article>
-    <div class="container">
-     <h3>
-      Research
-     </h3>
-     <h4>
-      Thesis
-     </h4>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_thesis.png"/>
-      <div class="11u mycol colAfterImage">
-       <div>
-        <b>
-         Études des stratégies et conception d’outils pour la production de supports illustratifs d’interaction
-        </b>
-       </div>
-       <div>
-        <i>
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Defended on 29-01-2021, Best thesis of 2021 in the french HCI community
-        <br/>
-        École doctorale Sciences pour l'ingénieur, CRIStAL, Université de Lille
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://hal.inria.fr/tel-03366786/">
-           <i class="fas fa-file-pdf">
-           </i>
-           <span class="label">
-            thesis [fr]
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://www.dropbox.com/s/a3dps01fszmbayn/SoutenanceTheseAxelAntoine.mp4">
-           <i class="fab fa-slideshare">
-           </i>
-           <span class="label">
-            defense [fr]
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
-     <h4>
-      International Conferences
-     </h4>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_taxonomy.jpg"/>
-      <div class="11u mycol colAfterImage">
-       <div>
-        <b>
-         Interaction Illustration Taxonomy: Classification of Styles and Techniques for Visually Representing Interaction Scenarios
-        </b>
-       </div>
-       <div>
-        <i>
-         <a href="https://axantoine.com">
-          Axel Antoine
-         </a>
-         ,
-         <a href="http://www.malacria.com">
-          Sylvain Malacria
-         </a>
-         ,
-         <a href="https://uclic.ucl.ac.uk/people/nicolai-marquardt">
-          Nicolai Marquardt
-         </a>
-         ,
-         <a href="https://cristal.univ-lille.fr/~casiez/">
-          Géry Casiez
-         </a>
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Honorable Mention Award
-        <br/>
-        Proceedings of CHI'21, the 38th Conference on Human Factors in Computing Systems, ACM
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://dx.doi.org/10.1145/3411764.3445586">
-           <i class="fas fa-link">
-           </i>
-           <span class="label">
-            doi
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://hal.archives-ouvertes.fr/hal-03137867">
-           <i class="fas fa-file-pdf">
-           </i>
-           <span class="label">
-            pdf
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://www.youtube.com/watch?v=tYBU9S6TsI8">
-           <i class="fab fa-youtube">
-           </i>
-           <span class="label">
-            video
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://www.youtube.com/watch?v=XxTyd5L77sY">
-           <i class="fab fa-slideshare">
-           </i>
-           <span class="label">
-            presentation
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://github.com/LokiResearch/IllustrationTaxonomy">
-           <i class="fab fa-github">
-           </i>
-           <span class="label">
-            github
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_chromium_asynchronicity.png"/>
-      <div class="11u mycol colAfterImage">
-       <div>
-        <b>
-         Modeling and Reducing Spatial Jitter caused by Asynchronous Input and Output Rates
-        </b>
-       </div>
-       <div>
-        <i>
-         <a href="https://axantoine.com">
-          Axel Antoine
-         </a>
-         ,
-         <a href="http://mathieu.nancel.net">
-          Mathieu Nancel
-         </a>
-         , Ella Ge, Jingjie Zheng, Navid Zolghadr,
-         <a href="https://cristal.univ-lille.fr/~casiez/">
-          Géry Casiez
-         </a>
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Proceedings of UIST'20, the 33rd ACM Symposium on User Interface Software and Technology, ACM
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://dx.doi.org/10.1145/3379337.3415833">
-           <i class="fas fa-link">
-           </i>
-           <span class="label">
-            doi
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://hal.inria.fr/hal-02919191/document">
-           <i class="fas fa-file-pdf">
-           </i>
-           <span class="label">
-            pdf
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://cristal.univ-lille.fr/~casiez/async">
-           <i class="fas fa-download">
-           </i>
-           <span class="label">
-            code
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_esquisse.png"/>
-      <div class="11u mycol colAfterImage">
-       <div>
-        <b>
-         Esquisse: Using 3D Models Staging to Facilitate the Creation of Vector-based Trace Figures
-        </b>
-       </div>
-       <div>
-        <i>
-         <a href="https://axantoine.com">
-          Axel Antoine
-         </a>
-         ,
-         <a href="http://www.malacria.com">
-          Sylvain Malacria
-         </a>
-         ,
-         <a href="https://uclic.ucl.ac.uk/people/nicolai-marquardt">
-          Nicolai Marquardt
-         </a>
-         ,
-         <a href="https://cristal.univ-lille.fr/~casiez/">
-          Géry Casiez
-         </a>
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Proceedings of Interact'19, the 17th IFIP TCI3 Conference on Human-Computer Interaction, Springer
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://doi.org/10.1007/978-3-030-29384-0_30">
-           <i class="fas fa-link">
-           </i>
-           <span class="label">
-            doi
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://hal.inria.fr/hal-02293837/document">
-           <i class="fas fa-file-pdf">
-           </i>
-           <span class="label">
-            pdf
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://www.youtube.com/watch?v=X2UdHXrvUg0">
-           <i class="fab fa-youtube">
-           </i>
-           <span class="label">
-            video
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://github.com/LokiResearch/Esquisse">
-           <i class="fab fa-github">
-           </i>
-           <span class="label">
-            github
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_turbomouse.png"/>
-      <div class="11u mycol colAfterImage">
-       <div>
-        <b>
-         Using High Frequency Accelerometer and Mouse to Compensate for End-to-end Latency in Indirect Interaction
-        </b>
-       </div>
-       <div>
-        <i>
-         <a href="https://axantoine.com">
-          Axel Antoine
-         </a>
-         ,
-         <a href="http://www.malacria.com">
-          Sylvain Malacria
-         </a>
-         ,
-         <a href="https://cristal.univ-lille.fr/~casiez/">
-          Géry Casiez
-         </a>
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems, ACM
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://doi.org/10.1145/3173574.3174183">
-           <i class="fas fa-link">
-           </i>
-           <span class="label">
-            doi
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://hal.inria.fr/hal-01714204/document">
-           <i class="fas fa-file-pdf">
-           </i>
-           <span class="label">
-            pdf
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://www.youtube.com/watch?v=qCIrOjHrvQw">
-           <i class="fab fa-youtube">
-           </i>
-           <span class="label">
-            video
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://www.youtube.com/watch?v=FAtI41SaqtY">
-           <i class="fab fa-slideshare">
-           </i>
-           <span class="label">
-            presentation
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="http://cristal.univ-lille.fr/~casiez/turbomouse/">
-           <i class="fas fa-download">
-           </i>
-           <span class="label">
-            code
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_forceedge.png"/>
-      <div class="11u mycol colAfterImage">
-       <div>
-        <b>
-         ForceEdge: Controlling Autoscroll on Both Desktop and Mobile Computers Using the Force
-        </b>
-       </div>
-       <div>
-        <i>
-         <a href="https://axantoine.com">
-          Axel Antoine
-         </a>
-         ,
-         <a href="http://www.malacria.com">
-          Sylvain Malacria
-         </a>
-         ,
-         <a href="https://cristal.univ-lille.fr/~casiez/">
-          Géry Casiez
-         </a>
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems, ACM
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://doi.org/10.1145/3025453.3025605">
-           <i class="fas fa-link">
-           </i>
-           <span class="label">
-            doi
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://hal.inria.fr/hal-01444366/document">
-           <i class="fas fa-file-pdf">
-           </i>
-           <span class="label">
-            pdf
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://www.youtube.com/watch?v=Ym6rPM0-2jc">
-           <i class="fab fa-youtube">
-           </i>
-           <span class="label">
-            video
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
-     <h4>
-      French Conferences
-     </h4>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_rotation3D.jpg"/>
-      <div class="11u mycol colAfterImage">
-       <div>
-        <b>
-         Étude de l'influence de la taille des sphères virtuelles de contrôle pour les rotations 3D
-        </b>
-       </div>
-       <div>
-        <i>
-         <a href="https://axantoine.com">
-          Axel Antoine
-         </a>
-         ,
-         <a href="http://www.malacria.com">
-          Sylvain Malacria
-         </a>
-         ,
-         <a href="https://cs.uwaterloo.ca/people-profiles/daniel-vogel">
-          Dan Vogel
-         </a>
-         ,
-         <a href="https://cristal.univ-lille.fr/~casiez/">
-          Géry Casiez
-         </a>
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Proceedings of IHM'22, la 33e conférence francophone sur l'Interaction Homme-Machine, ACM
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://dx.doi.org/10.1145/3500866.3516370">
-           <i class="fas fa-link">
-           </i>
-           <span class="label">
-            doi
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
-     <h4>
-      Posters and Demonstrations
-     </h4>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_turbomouse.png"/>
-      <div class="11u mycol colAfterImage">
-       <div>
-        <b>
-         TurboMouse: End-to-end Latency Compensation in Indirect Interaction
-        </b>
-       </div>
-       <div>
-        <i>
-         <a href="https://axantoine.com">
-          Axel Antoine
-         </a>
-         ,
-         <a href="http://www.malacria.com">
-          Sylvain Malacria
-         </a>
-         ,
-         <a href="https://cristal.univ-lille.fr/~casiez/">
-          Géry Casiez
-         </a>
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Extended Abstracts of the 2018 CHI Conference on Human Factors in Computing Systems, ACM
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://doi.org/10.1145/3170427.3186542">
-           <i class="fas fa-link">
-           </i>
-           <span class="label">
-            doi
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://hal.inria.fr/hal-01726763/document">
-           <i class="fas fa-file-pdf">
-           </i>
-           <span class="label">
-            pdf
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
-     <div class="row myrow" id="article_item">
-      <img alt="" class="1u mycol" src="images/icon_forceedge_ihm.png"/>
-      <div class="11u mycol colAfterImage">
-       <div>
-        <b>
-         Utilisation de la force sur pavés tactiles pour le défilement automatique
-        </b>
-       </div>
-       <div>
-        <i>
-         <a href="https://axantoine.com">
-          Axel Antoine
-         </a>
-         ,
-         <a href="http://www.malacria.com">
-          Sylvain Malacria
-         </a>
-         ,
-         <a href="https://cristal.univ-lille.fr/~casiez/">
-          Géry Casiez
-         </a>
-        </i>
-       </div>
-       <div style="text-align: justify; text-justify: inter-word;">
-        Actes De La 28Ième Conférence Francophone Sur L'Interaction Homme-Machine, 264--270, ACM
-       </div>
-       <div>
-        <ul class="social">
-         <li>
-          <a href="https://doi.org/10.1145/3004107.3004137">
-           <i class="fas fa-link">
-           </i>
-           <span class="label">
-            doi
-           </span>
-          </a>
-         </li>
-         <li>
-          <a href="https://hal.archives-ouvertes.fr/hal-01384315/document">
-           <i class="fas fa-file-pdf">
-           </i>
-           <span class="label">
-            pdf
-           </span>
-          </a>
-         </li>
-        </ul>
-       </div>
-      </div>
-     </div>
+ </div>
+ <div id="position-item-template">
+  <div class="col-12 position-item item">
+   <div class="item-title">
+    {location}
+   </div>
+   <div class="row location-date">
+    <span class="col-auto mr-auto">
+     {position}
+    </span>
+    <span class="col-auto">
+     {date}
+    </span>
+   </div>
+   <div class="text">
+    {team}
+   </div>
+  </div>
+ </div>
+ <div id="aboutme-template">
+  <div class="row aboutme">
+   <div class="col-2 col-lg-1">
+    <image src="images/{image}"/>
+   </div>
+   <div class="col">
+    <div class="name">
+     {name}
     </div>
-   </article>
+    <div class="catchphrase">
+     {catchphrase}
+    </div>
+    <div class="text">
+     {text}
+    </div>
+    <div class="links">
+     {links}
+    </div>
+   </div>
   </div>
-  <!-- Footer -->
-  <div class="wrapper style4">
-   <footer>
-    Design:
-    <a href="http://html5up.net">
-     HTML5 UP
-    </a>
-   </footer>
+ </div>
+ <div id="project-item-template">
+  <div class="col-6 col-lg-4 item">
+   <div class="card project-card">
+    <div class="card-header">
+     <!-- <div class="project-title"> -->
+     {title}
+    </div>
+    <div class="card-body">
+     <div class="row text-content">
+      <div class="col-4 col-md-3">
+       <image src="images/{image}"/>
+      </div>
+      <div class="col">
+       <div class="subtitle">
+        {subtitle}
+        <div class="links">
+         {project_links}
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-12 text">
+      {summary}
+     </div>
+     <div class="keywords">
+      {keywords}
+     </div>
+     <details class="details {detailsclass}">
+      <summary>
+       Research Paper
+      </summary>
+      <div class="publication">
+       {publication}
+      </div>
+      <div class="links">
+       {paper_links}
+      </div>
+     </details>
+    </div>
+    <!-- </div> -->
+   </div>
   </div>
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js">
-  </script>
-  <script src="assets/js/jquery.scrolly.min.js">
-  </script>
-  <script src="assets/js/skel.min.js">
-  </script>
-  <script src="assets/js/skel-viewport.min.js">
-  </script>
-  <script src="assets/js/util.js">
-  </script>
-  <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-  <script src="assets/js/main.js">
-  </script>
- </body>
-</html>
+ </div>
+ <div id="keyword-template">
+  <span class="keyword">
+   {label}
+  </span>
+ </div>
+ <div id="text-item-template">
+  <div class="text-item">
+   <div class="item-title">
+    {title}
+   </div>
+   <p class="text">
+    {text}
+   </p>
+  </div>
+ </div>
+ <div id="link-template">
+  <a class="link" href="{url}">
+   <i class="fa-icon {fa_class}">
+   </i>
+   <span class="label">
+    {name}
+   </span>
+  </a>
+ </div>
+</template>
