@@ -57,8 +57,8 @@ summary {
   overflow-y: auto;
 }
 
-.container, .container-md {
-  max-width: 1140px;
+.container {
+  max-width: 1000px;
   padding-top: 2em;
   padding-bottom: 2em;
 }
