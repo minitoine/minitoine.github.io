@@ -21,12 +21,12 @@ function onNavClick(activeNavItem) {
 
 /**
  *
- * From : Find back the source URL from StachOverflow
+ * From : https://stackoverflow.com/questions/51229742/javascript-window-scroll-behavior-smooth-not-working-in-safari
  */
 function scrollToSmoothly(pos, time) {
 
-    const content = document.getElementById("content");
-    const currentPos = content.scrollTop;
+    const content = window.pageYOffset;
+    const currentPos = window.pageYOffset;
 
     let start = null;
     if(time == null) time = 500;
@@ -35,14 +35,14 @@ function scrollToSmoothly(pos, time) {
         start = start ?? currentTime;
         const progress = currentTime - start;
         if (currentPos < pos) {
-            content.scrollTo(0, ((pos - currentPos) * progress / time) + currentPos);
+            window.scrollTo(0, ((pos - currentPos) * progress / time) + currentPos);
         } else {
-            content.scrollTo(0, currentPos - ((currentPos - pos) * progress / time));
+            window.scrollTo(0, currentPos - ((currentPos - pos) * progress / time));
         }
         if (progress < time) {
             window.requestAnimationFrame(step);
         } else {
-            content.scrollTo(0, pos);
+            window.scrollTo(0, pos);
         }
     });
 }

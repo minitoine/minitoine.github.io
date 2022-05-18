@@ -2,6 +2,7 @@ html {
   scroll-behavior: smooth;
   font-family: Helvetica;
   font-size: 10pt;
+  scroll-padding-top: 2em;
 }
 
 body {
@@ -23,12 +24,16 @@ summary {
 }
 
 #navigation-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   background-color: #404BB8;
   height: 3em;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 
 .navigation-item {
@@ -42,19 +47,16 @@ summary {
 }
 
 .navigation-item:hover {
-  /*background-color: #505050;*/
   text-decoration: none;
   color: white;
   border: white 1px solid;
 }
 
 .navigation-item .active {
-  /*background-color: lightgray;*/
 }
 
 #content {
-  height: calc(100vh - 3em);
-  overflow-y: auto;
+  padding-top: 3em;
 }
 
 .container {
