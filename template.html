@@ -21,8 +21,8 @@
     <div class="container">
         <div id="aboutme" class="section"></div>
         <div class="row">
-            <div id="positions" class="col-6 col-md-6"></div>
-            <div id="education" class="col-6 col-md-6"></div>
+            <div id="positions" class="col-12 col-sm-10 col-md-6"></div>
+            <div id="education" class="col-12 col-sm-10 col-md-6"></div>
         </div>
         <div id="projects"></div>
         <div id="research"></div>
@@ -90,7 +90,7 @@
                 {diploma}
             </div>
             <div class="row location-date">
-                <div class="col-auto mr-auto">{location}</div>
+                <div class="col-auto me-auto">{location}</div>
                 <div class="col-auto">{date}</div>
             </div>
             <div class="text">
@@ -105,7 +105,7 @@
                 {location}
             </div>
             <div class="row location-date">
-                <span class="col-auto mr-auto">{position}</span>
+                <span class="col-auto me-auto">{position}</span>
                 <span class="col-auto">{date}</span>
             </div>
             <div class="text">
@@ -115,11 +115,11 @@
     </div>
 
     <div id="aboutme-template">
-        <div class="row aboutme">
+        <div class="row aboutme justify-content-center">
             <div class="col-2 col-lg-1">
                 <image src="images/{image}"/>
             </div>
-            <div class="col">
+            <div class="col-8">
                 <div class="name">{name}</div>
                 <div class="catchphrase">{catchphrase}</div>
                 <div class="text">{text}</div>
@@ -129,7 +129,7 @@
     </div>
 
     <div id="project-item-template">
-        <div class="col-6 col-lg-4 item">
+        <div class="col-12 col-sm-6 col-lg-4 item">
             <div class="card project-card">
                 <div class ="card-header">
                     <!-- <div class="project-title"> -->
@@ -137,7 +137,7 @@
                 </div>
                 <div class="card-body">
                     <div class="row text-content">
-                        <div class="col-4 col-md-3">
+                        <div class="col-2 col-sm-3">
                             <image src="images/{image}"/>
                         </div>
                         <div class="col">
