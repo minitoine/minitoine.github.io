@@ -3,9 +3,9 @@
 
 aboutme:
     name: "Axel Antoine"
-    catchphrase: "Software Engineer"
+    catchphrase: "R&D Engineer"
     image: "me.jpg"
-    text: "I am a Research Software Engineer at Inria, France. I have a PhD in Computer
+    text: "I am a R&D Engineer at Inria, France. I have a PhD in Computer
         Science specialized in Human Computer Interaction (HCI). I am interested both in
         the interaction techniques that facilitate the manipulation of 3D objects and the
         computer graphics algorithms used to render them."
@@ -21,7 +21,7 @@ positions:
     name: "Positions"
     items:
         -
-            position: "Research Software Engineer"
+            position: "R&D Engineer"
             location: "Inria, France"
             date: "Jan. 2021 - Ongoing"
             team: "Loki team"
