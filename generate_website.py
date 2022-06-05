@@ -5,12 +5,12 @@ from bs4 import BeautifulSoup
 data = None
 
 link_types_order = ['doi', 'pdf', 'video', 'presentation', 'github', 'code', 'demo',
-    'linkedin','facebook','mail', 'resume']
+    'linkedin','facebook','mail', 'resume', 'scholar']
+
 
 def get_links_html(links, filter_links=link_types_order):
 
     template = get_template('link-template')
-
     html = ""
 
     linkMap = {}
@@ -62,12 +62,11 @@ def get_project_item_html(project):
     links = project_data["links"]
     code_links_type = ['github', 'code', 'demo', 'video']
     code_links = [link for link in links if link['type'] in code_links_type]
-    publi_links = [link for link in links if link['type'] not in code_links_type]
 
 
-    detailsclass = "nodisplay"
-    if len(publi_links) > 0 or project_data.get("paper_title"):
-        detailsclass = ""
+    publicationLinkClass = "nodisplay"
+    if project_data.get("paper_title", None):
+        publicationLinkClass = ""
 
     subtitle = project_data.get("year", "")
     location = project_data.get("location", "")
@@ -75,22 +74,26 @@ def get_project_item_html(project):
         subtitle += ', '+location
 
 
-    links_html = get_links_html(publi_links)
-    code_links_html = get_links_html(code_links)
+    links_html = get_links_html(code_links)
+
+    if project_data.get("paper_title", None):
+        links_html += get_links_html([{
+            "type":"scholar",
+            "url":"#"+project,
+            "name": "paper"
+        }]);
 
     template = get_template('project-item-template')
     html = template.format(
+        publicationId = project,
         image = project_data["icon"],
         title = project_data["title"],
         location = project_data["location"],
         status = project_data["status"],
-        detailsclass = detailsclass,
-        publication = project_data.get("paper_title", ""),
-        conf_short = project_data.get("conf_short", ""),
+        publicationLinkClass = publicationLinkClass,
         subtitle = subtitle,
         summary = project_data["summary"],
-        paper_links = links_html,
-        project_links = code_links_html,
+        project_links = links_html,
         keywords = get_keywords_html(project_data["keywords"])
     )
     return html
@@ -126,6 +129,7 @@ def get_publication_item_html(publication):
 
     template = get_template('publication-item-template')
     html = template.format(
+        publicationId = publication,
         image = publication_data["icon"],
         title = publication_data["paper_title"],
         conf_short = publication_data["conf_short"],
@@ -207,7 +211,6 @@ if __name__ == '__main__':
     section.append(BeautifulSoup(html, 'html.parser'))
 
     def sortProjectsFunc(items):
-        print(items)
         items.sort(key=lambda x: data.get(x).get('year'), reverse=True)
 
     print("Generating Projects section...")

@@ -32,7 +32,6 @@
 </div>
 
 <script src="assets/bootstrap5.0.2/js/bootstrap.bundle.min.js"></script>
-<script src="assets/masonry.pkgd.min.js"></script>
 <script src="main.js"></script>
 
 </body>
@@ -53,15 +52,14 @@
     <div id="subsection-template">
         <div class="subsection">
             <div class="subsection-title">{title}</div>
-            <div class="row subsection-content masonry-grid">
+            <div class="row subsection-content">
                 {content}
             </div>
         </div>
     </div>
 
     <div id="publication-item-template">
-        <div class="publication-item item">
-
+        <div id="{publicationId}" class="publication-item item">
             <div class="row">
                 <div class="col-2 col-lg-1">
                     <div class="conf-badge">{conf_short}</div>
@@ -107,8 +105,8 @@
                 {location}
             </div>
             <div class="row location-date">
-                <span class="col-auto me-auto">{position}</span>
-                <span class="col-auto">{date}</span>
+                <div class="col-auto me-auto">{position}</div>
+                <div class="col-auto">{date}</div>
             </div>
             <div class="text">
                {team}
@@ -136,7 +134,7 @@
 
     <div id="project-item-template">
         <div class="col-12 col-sm-6 col-lg-4 item">
-            <div class="card project-card">
+            <div class="card project-card h-100">
                 <div class ="card-header">
                     <!-- <div class="project-title"> -->
                     {title}
@@ -160,22 +158,11 @@
                         {summary}
                     </div>
 
+                </div>
+                <div class="card-footer">
                     <div class="keywords">
                         {keywords}
                     </div>
-
-                    <details class="details {detailsclass}">
-                        <summary >Research Paper</summary>
-
-                        <div class="publication">
-                            {publication}
-                        </div>
-
-                        <div class="links">
-                            {paper_links}
-                        </div>
-
-                    </details>
                 </div>
                 <!-- </div> -->
             </div>
@@ -183,9 +170,9 @@
     </div>
 
     <div id="keyword-template">
-        <span class="keyword">
+        <div class="keyword">
             {label}
-        </span>
+        </div>
     </div>
 
     <div id="text-item-template">
@@ -200,7 +187,7 @@
     </div>
 
     <div id="link-template">
-        <a class="link" href="{url}">
+        <a class="link" href="{url}" onclick="onNavClick(this)">
             <i class="fa-icon {fa_class}"></i>
             <span class="label">{name}</span>
         </a>
