@@ -24,19 +24,17 @@ summary {
 }
 
 footer {
-  background-color: #404BB8;
-  color: white;
   text-align: center;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
 }
 
 footer > a {
-  color: white;
+  color: #404BB8;
 }
 
 footer > a:hover {
-  color: white;
+  color: #404BB8;
 }
 
 #navigation-bar {
