@@ -23,6 +23,22 @@ summary {
   outline:none;
 }
 
+footer {
+  background-color: #404BB8;
+  color: white;
+  text-align: center;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
+footer > a {
+  color: white;
+}
+
+footer > a:hover {
+  color: white;
+}
+
 #navigation-bar {
   position: fixed;
   top: 0;
